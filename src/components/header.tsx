@@ -13,7 +13,7 @@ export default function Header() {
          <div className="flex justify-center w-full max-w-[1440px] py-10">
             <Menubar>
                <MenubarMenu>
-                  <MenubarTrigger>Home</MenubarTrigger>
+                  <MenubarTrigger>Inicio</MenubarTrigger>
                   {/* <MenubarContent>
                      <MenubarItem>
                         New Tab <MenubarShortcut>⌘T</MenubarShortcut>
@@ -21,15 +21,15 @@ export default function Header() {
                   </MenubarContent> */}
                </MenubarMenu>
                <MenubarMenu>
-                  <MenubarTrigger>Experience</MenubarTrigger>
+                  <MenubarTrigger>Experiencia</MenubarTrigger>
                </MenubarMenu>
 
                <MenubarMenu>
-                  <MenubarTrigger>Projects</MenubarTrigger>
+                  <MenubarTrigger>Proyectos</MenubarTrigger>
                </MenubarMenu>
 
                <MenubarMenu>
-                  <MenubarTrigger>Contact</MenubarTrigger>
+                  <MenubarTrigger>Contacto</MenubarTrigger>
                </MenubarMenu>
             </Menubar>
          </div>
