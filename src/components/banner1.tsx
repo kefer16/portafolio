@@ -22,7 +22,7 @@ export default function Banner() {
                <div className="flex flex-col w-2/4 gap-4">
                   <div className="flex flex-col gap-1">
                      <TypographyH2 text="Hola, 👋" />
-                     <TypographyH1 text="Soy, Kevin Morales" />
+                     <TypographyH1 text="Soy Kevin Morales" />
                      <TypografyLead text="Técnico en Computación e Informática" />
                   </div>
 
