@@ -7,29 +7,31 @@ import {
    MenubarShortcut,
    MenubarTrigger,
 } from "@/components/ui/menubar";
+import Link from "next/link";
 export default function Header() {
    return (
-      <div className="flex w-full justify-center">
+      <div className="fixed flex w-full justify-center z-50">
          <div className="flex justify-center w-full max-w-[1440px] py-10">
             <Menubar>
                <MenubarMenu>
-                  <MenubarTrigger>Inicio</MenubarTrigger>
-                  {/* <MenubarContent>
-                     <MenubarItem>
-                        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                     </MenubarItem>
-                  </MenubarContent> */}
+                  <Link href="#home">
+                     <MenubarTrigger>Inicio</MenubarTrigger>
+                  </Link>
                </MenubarMenu>
                <MenubarMenu>
-                  <MenubarTrigger>Experiencia</MenubarTrigger>
+                  <Link href="#skills">
+                     <MenubarTrigger>Habilidades</MenubarTrigger>
+                  </Link>
                </MenubarMenu>
-
                <MenubarMenu>
-                  <MenubarTrigger>Proyectos</MenubarTrigger>
+                  <Link href="#projects">
+                     <MenubarTrigger>Proyectos</MenubarTrigger>
+                  </Link>
                </MenubarMenu>
-
                <MenubarMenu>
-                  <MenubarTrigger>Contacto</MenubarTrigger>
+                  <Link href="#contact">
+                     <MenubarTrigger>Contacto</MenubarTrigger>
+                  </Link>
                </MenubarMenu>
             </Menubar>
          </div>
