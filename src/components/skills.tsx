@@ -28,12 +28,12 @@ export default function Skills() {
       <div id="skills" className="flex w-full px-5 justify-center min-h-screen">
          <div className="flex flex-col mt-[80px] w-full max-w-[1440px] py-5">
             <TypographyH2 text="Habilidades" />
-            <div className="w-full md:w-[600px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
-               <Card className="flex flex-col max-w-fit">
+            <div className="w-full md:w-[600px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>HTML</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="html icon"
@@ -44,11 +44,11 @@ export default function Skills() {
                   </CardContent>
                </Card>
 
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>CSS</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="css icon"
@@ -58,11 +58,11 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>JS</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="js icon"
@@ -73,11 +73,11 @@ export default function Skills() {
                   </CardContent>
                </Card>
 
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>React</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="react icon"
@@ -87,11 +87,11 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>Postman</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="Postman icon"
@@ -101,11 +101,11 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>Swagger</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="swagger icon"
@@ -115,11 +115,11 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>Nest</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="Nest icon"
@@ -129,11 +129,11 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>Git</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="git icon"
@@ -143,11 +143,11 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>GitHub</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="github icon"
@@ -158,11 +158,11 @@ export default function Skills() {
                   </CardContent>
                </Card>
 
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>C#</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="c# icon"
@@ -172,11 +172,11 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>SQL</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="sql icon"
@@ -187,11 +187,11 @@ export default function Skills() {
                   </CardContent>
                </Card>
 
-               <Card className="flex flex-col max-w-fit">
+               <Card className="flex flex-col w-full">
                   <CardHeader className="text-center">
                      <CardTitle>PHP</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex justify-center">
                      <Image
                         className="dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                         alt="php icon"
