@@ -25,10 +25,10 @@ import Image from "next/image";
 
 export default function Skills() {
    return (
-      <div id="skills" className="flex w-full justify-center min-h-screen">
-         <div className="flex flex-col w-full max-w-[1440px] py-5">
+      <div id="skills" className="flex w-full px-5 justify-center min-h-screen">
+         <div className="flex flex-col mt-[80px] w-full max-w-[1440px] py-5">
             <TypographyH2 text="Habilidades" />
-            <div className="w-[600px] mx-auto grid grid-cols-4 gap-4 mt-5">
+            <div className="w-full md:w-[600px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
                <Card>
                   <CardHeader className="text-center">
                      <CardTitle>HTML</CardTitle>
