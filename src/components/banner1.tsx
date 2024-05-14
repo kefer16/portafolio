@@ -5,6 +5,7 @@ import Image from "next/image";
 import TypographyH2 from "./typography-h2";
 import { Button } from "./ui/button";
 import TypografyLead from "./typografy-lead";
+import { CardFooter } from "./ui/card";
 
 export default function Banner() {
    return (
@@ -19,7 +20,7 @@ export default function Banner() {
             before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] 
             after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]"
             ></div>
-            <div className="w-full px-5 flex flex-col  md:justify-around md:flex-row  relative z-[-1] place-items-center ">
+            <div className="w-full px-5 flex flex-col  md:justify-around md:flex-row  relative place-items-center">
                <div className="flex flex-col w-full md:w-2/4 gap-4">
                   <div className="flex flex-col gap-1">
                      <TypographyH2 text="Hola, 👋" />
@@ -34,9 +35,20 @@ export default function Banner() {
                      trabajo, facilidad de resolución de problemas y sobre todo
                      con muchas ganas de aprender."
                   />
+
                   <div className="flex flex-row gap-5">
-                     <Button variant="default">Descargar CV</Button>
-                     <Button variant="secondary">Contacto</Button>
+                     <Button
+                        className="transition duration-150 ease-in-out hover:scale-110"
+                        variant="default"
+                     >
+                        Descargar CV
+                     </Button>
+                     <Button
+                        className="transition duration-150 ease-in-out hover:scale-110"
+                        variant="secondary"
+                     >
+                        Contacto
+                     </Button>
                   </div>
                </div>
 

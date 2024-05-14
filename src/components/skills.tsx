@@ -29,7 +29,7 @@ export default function Skills() {
          <div className="flex flex-col mt-[80px] w-full max-w-[1440px] py-5">
             <TypographyH2 text="Habilidades" />
             <div className="w-full md:w-[600px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>HTML</CardTitle>
                   </CardHeader>
@@ -44,7 +44,7 @@ export default function Skills() {
                   </CardContent>
                </Card>
 
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>CSS</CardTitle>
                   </CardHeader>
@@ -58,7 +58,7 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>JS</CardTitle>
                   </CardHeader>
@@ -73,7 +73,7 @@ export default function Skills() {
                   </CardContent>
                </Card>
 
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>React</CardTitle>
                   </CardHeader>
@@ -87,7 +87,7 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>Postman</CardTitle>
                   </CardHeader>
@@ -101,7 +101,7 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>Swagger</CardTitle>
                   </CardHeader>
@@ -115,7 +115,7 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>Nest</CardTitle>
                   </CardHeader>
@@ -129,7 +129,7 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>Git</CardTitle>
                   </CardHeader>
@@ -143,7 +143,7 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>GitHub</CardTitle>
                   </CardHeader>
@@ -158,7 +158,7 @@ export default function Skills() {
                   </CardContent>
                </Card>
 
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>C#</CardTitle>
                   </CardHeader>
@@ -172,7 +172,7 @@ export default function Skills() {
                      />
                   </CardContent>
                </Card>
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>SQL</CardTitle>
                   </CardHeader>
@@ -187,7 +187,7 @@ export default function Skills() {
                   </CardContent>
                </Card>
 
-               <Card className="flex flex-col w-full">
+               <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
                   <CardHeader className="text-center">
                      <CardTitle>PHP</CardTitle>
                   </CardHeader>
