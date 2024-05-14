@@ -29,7 +29,7 @@ export default function Skills() {
          <div className="flex flex-col mt-[80px] w-full max-w-[1440px] py-5">
             <TypographyH2 text="Habilidades" />
             <div className="w-full md:w-[600px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 mt-5">
-               <Card>
+               <Card className="flex flex-col max-w-fit">
                   <CardHeader className="text-center">
                      <CardTitle>HTML</CardTitle>
                   </CardHeader>
