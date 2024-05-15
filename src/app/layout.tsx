@@ -4,10 +4,10 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
    metadataBase: new URL("https://kefer.dev"),
-   title: "Portafolio | Kevin Morales Figueroa",
+   title: "Portafolio - Kevin Morales Figueroa",
    description: "Portafolio Web",
    openGraph: {
-      title: "Portafolio | Kevin Morales Figueroa",
+      title: "Portafolio - Kevin Morales Figueroa",
       description: "Portafolio Web",
       type: "website",
       url: "https://kefer.dev",
