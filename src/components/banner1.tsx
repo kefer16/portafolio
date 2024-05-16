@@ -47,7 +47,7 @@ export default function Banner() {
                <div className="flex mt-10 justify-center items-center w-[250px] h-[250px]">
                   <Image
                      className="relative dark:drop-shadow-[0_0_2rem_#0141ff3f] rounded-full"
-                     src="/foto.jpg"
+                     src="/foto.webp"
                      alt="Next.js Logo"
                      width={300}
                      height={300}

@@ -5,21 +5,21 @@ import StarsCanvas from "@/components/stars-canvas";
 
 export const metadata: Metadata = {
    metadataBase: new URL("https://kefer.dev/"),
-   title: "Portafolio | Kevin Morales Figueroa",
-   description: "Portafolio Web",
+   title: "Portafolio | Kevin Morales",
+   description: "Portafolio Web de Kevin Fernando Morales Figueroa",
    openGraph: {
-      title: "Portafolio | Kevin Morales Figueroa",
-      description: "Portafolio Web",
+      title: "Portafolio | Kevin Morales",
+      description: "Portafolio Web de Kevin Fernando Morales Figueroa",
       url: "https://kefer.dev/",
       type: "website",
-      images: "login.jpeg",
-      siteName: "kefer",
+      images: "home.png",
+      siteName: "kefer.dev",
    },
    twitter: {
       card: "summary_large_image",
-      title: "Portafolio - Kevin Morales Figueroa",
-      description: "Portafolio Web",
-      images: "login.jpeg",
+      title: "Portafolio - Kevin Morales",
+      description: "Portafolio Web de Kevin Fernando Morales Figueroa",
+      images: "home.png",
    },
 };
 
