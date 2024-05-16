@@ -27,15 +27,7 @@ export default function Banner() {
                      <TypographyH1 text="Soy Kevin Morales" />
                      <TypografyLead text="Técnico en Computación e Informática" />
                   </div>
-
-                  <TypographyP
-                     text="Profesional con experiencia en desarrollo de software de
-                     aplicaciones de escritorio y web, responsable, dinámico,
-                     creativo, facilidad de adaptación, empatía con equipo de
-                     trabajo, facilidad de resolución de problemas y sobre todo
-                     con muchas ganas de aprender."
-                  />
-
+                  <TypographyP text="Un desarrollador apasionado con más de dos años de experiencia en la creación y mantenimiento de aplicaciones web y de escritorio. Mi enfoque se centra en ofrecer soluciones eficientes y escalables tanto en el frontend como en el backend." />
                   <div className="flex flex-row gap-5">
                      <Button
                         className="transition duration-150 ease-in-out hover:scale-110"
