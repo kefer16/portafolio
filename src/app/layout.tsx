@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import StarsCanvas from "@/components/stars-canvas";
 
 export const metadata: Metadata = {
    metadataBase: new URL("https://kefer.dev/"),
@@ -28,12 +29,13 @@ export default function RootLayout({
    children: React.ReactNode;
 }>) {
    return (
-      <html className="scroll-smooth" lang="en">
+      <html id="html-background" className="scroll-smooth" lang="en">
          {/* <head>
             <link rel="canonical" href="https://kefer.dev" />
             <meta property="og:image" content="https:///kefer.dev/login.jpeg" />
          </head> */}
          <body>
+            <StarsCanvas />
             <ThemeProvider
                attribute="class"
                defaultTheme="dark"
