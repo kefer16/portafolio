@@ -6,6 +6,7 @@ import TypographyH2 from "./typography-h2";
 import { Button } from "./ui/button";
 import TypografyLead from "./typografy-lead";
 import { CardFooter } from "./ui/card";
+import { AspectRatio } from "./ui/aspect-ratio";
 
 export default function Banner() {
    return (
@@ -45,14 +46,15 @@ export default function Banner() {
                </div>
 
                <div className="flex mt-10 justify-center items-center w-[250px] h-[250px]">
-                  <Image
-                     className="relative dark:drop-shadow-[0_0_2rem_#0141ff3f] rounded-full"
-                     src="/foto.webp"
-                     alt="Next.js Logo"
-                     width={300}
-                     height={300}
-                     priority
-                  />
+                  <AspectRatio ratio={1 / 1}>
+                     <Image
+                        className="relative dark:drop-shadow-[0_0_2rem_#0141ff3f] rounded-full"
+                        src="/foto.webp"
+                        alt="Next.js Logo"
+                        fill
+                        priority
+                     />
+                  </AspectRatio>
                </div>
             </div>
          </div>

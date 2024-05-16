@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import TypographyH2 from "./typography-h2";
 import TypographyP from "./typography-p";
@@ -13,6 +14,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
 import TypografyLead from "./typografy-lead";
+import { AspectRatio } from "@radix-ui/react-aspect-ratio";
 
 export default function Project() {
    return (
@@ -29,13 +31,16 @@ export default function Project() {
                         <CardTitle>Paises Buscador</CardTitle>
                      </CardHeader>
                      <CardContent className="flex flex-col justify-center">
-                        <Image
-                           className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
-                           alt="html icon"
-                           width={400}
-                           height={300}
-                           src="/projects/api-contries.webp"
-                        />
+                        <AspectRatio ratio={4 / 3}>
+                           <Image
+                              className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
+                              alt="html icon"
+                              // width={400}
+                              // height={300}
+                              fill
+                              src="/projects/api-contries.webp"
+                           />
+                        </AspectRatio>
                      </CardContent>
                      <CardFooter className="flex flex-col">
                         <TypografyLead text="Sitio web para buscar paises por region donde se econtrara informacion esencial del pais, esta informacion se extrae gracias a la API de restcountries.com" />
@@ -57,13 +62,14 @@ export default function Project() {
                         <CardTitle>Vas APP</CardTitle>
                      </CardHeader>
                      <CardContent className="flex flex-col justify-center">
-                        <Image
-                           className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
-                           alt="html icon"
-                           width={400}
-                           height={300}
-                           src="/projects/vas-app.webp"
-                        />
+                        <AspectRatio ratio={4 / 3}>
+                           <Image
+                              className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
+                              alt="html icon"
+                              fill
+                              src="/projects/vas-app.webp"
+                           />
+                        </AspectRatio>
                      </CardContent>
                      <CardFooter className="flex flex-col">
                         <TypografyLead text="Aplicación móvil para gestión de proyectos, esta se conecta a la API Vas" />
@@ -81,13 +87,15 @@ export default function Project() {
                         <CardTitle>Vas API</CardTitle>
                      </CardHeader>
                      <CardContent className="flex flex-col justify-center">
-                        <Image
-                           className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
-                           alt="html icon"
-                           width={400}
-                           height={300}
-                           src="/projects/vas-swagger.webp"
-                        />
+                        <AspectRatio ratio={4 / 3}>
+                           <Image
+                              className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
+                              alt="html icon"
+                              width={400}
+                              height={300}
+                              src="/projects/vas-swagger.webp"
+                           />
+                        </AspectRatio>
                      </CardContent>
                      <CardFooter className="flex flex-col">
                         <TypografyLead text="API REST que hara como puente para comunicar la aplicación móvil Vas con la base de datos SQL" />
@@ -109,13 +117,14 @@ export default function Project() {
                         <CardTitle>Gamertec Website</CardTitle>
                      </CardHeader>
                      <CardContent className="flex flex-col justify-center">
-                        <Image
-                           className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
-                           alt="html icon"
-                           width={400}
-                           height={300}
-                           src="/projects/gamertec-frontend-home.webp"
-                        />
+                        <AspectRatio ratio={4 / 3}>
+                           <Image
+                              className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
+                              alt="html icon"
+                              fill
+                              src="/projects/gamertec-frontend-home.webp"
+                           />
+                        </AspectRatio>
                      </CardContent>
                      <CardFooter className="flex flex-col">
                         <TypografyLead text="Carrito de compras de productos tecnológicos, se trabajó apartado de administrador y pagos con 'Mercado Pago'" />
