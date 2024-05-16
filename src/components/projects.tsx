@@ -26,7 +26,7 @@ export default function Project() {
                <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
                   <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150 !p-0">
                      <CardHeader>
-                        <CardTitle>Buscador de Paises</CardTitle>
+                        <CardTitle>Paises Buscador</CardTitle>
                      </CardHeader>
                      <CardContent className="flex flex-col justify-center">
                         <Image
@@ -78,7 +78,7 @@ export default function Project() {
                   </Card>
                   <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150 !p-0">
                      <CardHeader>
-                        <CardTitle>API Vas</CardTitle>
+                        <CardTitle>Vas API</CardTitle>
                      </CardHeader>
                      <CardContent className="flex flex-col justify-center">
                         <Image
@@ -106,7 +106,7 @@ export default function Project() {
                   </Card>
                   <Card className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150 !p-0">
                      <CardHeader>
-                        <CardTitle>Gamertec</CardTitle>
+                        <CardTitle>Gamertec Website</CardTitle>
                      </CardHeader>
                      <CardContent className="flex flex-col justify-center">
                         <Image
