@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import TypographyH2 from "./typography-h2";
-import TypographyP from "./typography-p";
-import { TypographyH3 } from "./typography-h3";
 import {
    Card,
    CardContent,
@@ -15,6 +13,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import TypografyLead from "./typografy-lead";
 import { AspectRatio } from "@radix-ui/react-aspect-ratio";
+import { Code, Eye, GitBranchPlus, GitCommit, Github } from "lucide-react";
 
 export default function Project() {
    return (
@@ -35,8 +34,6 @@ export default function Project() {
                            <Image
                               className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                               alt="html icon"
-                              // width={400}
-                              // height={300}
                               fill
                               src="/projects/api-contries.webp"
                            />
@@ -49,10 +46,14 @@ export default function Project() {
                               href="https://apicountries-frontmentor-pjl8qxn75-kefer16.vercel.app/"
                               target="_blank"
                            >
-                              <Button>Live Demo</Button>
+                              <Button>
+                                 Live Demo
+                                 <Eye className="ml-3" color="#fff" size={16} />
+                              </Button>
                            </Link>
                            <Button variant="outline" disabled>
                               GitHub
+                              <Github className="ml-3" color="#fff" size={16} />
                            </Button>
                         </div>
                      </CardFooter>
@@ -74,10 +75,14 @@ export default function Project() {
                      <CardFooter className="flex flex-col">
                         <TypografyLead text="Aplicación móvil para gestión de proyectos, esta se conecta a la API Vas" />
                         <div className="w-full flex flex-row justify-between pt-3">
-                           <Button disabled>Live Demo</Button>
+                           <Button disabled>
+                              Live Demo
+                              <Eye className="ml-3" color="#fff" size={16} />
+                           </Button>
 
                            <Button variant="outline" disabled>
                               GitHub
+                              <Github className="ml-3" color="#fff" size={16} />
                            </Button>
                         </div>
                      </CardFooter>
@@ -91,8 +96,7 @@ export default function Project() {
                            <Image
                               className="w-full h-[300px] dark:drop-shadow-[0_0_0.2rem_#ffffff50]"
                               alt="html icon"
-                              width={400}
-                              height={300}
+                              fill
                               src="/projects/vas-swagger.webp"
                            />
                         </AspectRatio>
@@ -104,10 +108,14 @@ export default function Project() {
                               href="https://vasapi-production.up.railway.app/swagger"
                               target="_blank"
                            >
-                              <Button>Live Demo</Button>
+                              <Button>
+                                 Live Demo
+                                 <Eye className="ml-3" color="#fff" size={16} />
+                              </Button>
                            </Link>
                            <Button variant="outline" disabled>
                               GitHub
+                              <Github className="ml-3" color="#fff" size={16} />
                            </Button>
                         </div>
                      </CardFooter>
@@ -129,10 +137,14 @@ export default function Project() {
                      <CardFooter className="flex flex-col">
                         <TypografyLead text="Carrito de compras de productos tecnológicos, se trabajó apartado de administrador y pagos con 'Mercado Pago'" />
                         <div className="w-full flex flex-row justify-between pt-3">
-                           <Button disabled>Live Demo</Button>
+                           <Button disabled>
+                              Live Demo
+                              <Eye className="ml-3" color="#fff" size={16} />
+                           </Button>
 
                            <Button variant="outline" disabled>
                               GitHub
+                              <Github className="ml-3" color="#fff" size={16} />
                            </Button>
                         </div>
                      </CardFooter>

@@ -12,6 +12,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
+import { SendHorizonal } from "lucide-react";
 
 export default function Contact() {
    return (
@@ -65,7 +66,14 @@ export default function Contact() {
                      </form>
                   </CardContent>
                   <CardFooter className="flex">
-                     <Button>Enviar</Button>
+                     <Button className="transition duration-150 ease-in-out hover:scale-110">
+                        Enviar{" "}
+                        <SendHorizonal
+                           className="ml-3"
+                           color="#fff"
+                           size={16}
+                        />
+                     </Button>
                   </CardFooter>
                </Card>
             </div>

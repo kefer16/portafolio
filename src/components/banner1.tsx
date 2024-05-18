@@ -5,8 +5,14 @@ import Image from "next/image";
 import TypographyH2 from "./typography-h2";
 import { Button } from "./ui/button";
 import TypografyLead from "./typografy-lead";
-import { CardFooter } from "./ui/card";
 import { AspectRatio } from "./ui/aspect-ratio";
+import {
+   ArrowDownToLine,
+   CircleArrowDown,
+   CircleArrowDownIcon,
+   Mail,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function Banner() {
    return (
@@ -35,13 +41,21 @@ export default function Banner() {
                         variant="default"
                      >
                         Descargar CV
+                        <ArrowDownToLine
+                           className="ml-3"
+                           color="#fff"
+                           size={16}
+                        />
                      </Button>
-                     <Button
-                        className="transition duration-150 ease-in-out hover:scale-110"
-                        variant="secondary"
-                     >
-                        Contacto
-                     </Button>
+                     <Link href="#contact">
+                        <Button
+                           className="transition duration-150 ease-in-out hover:scale-110"
+                           variant="secondary"
+                        >
+                           Contacto
+                           <Mail className="ml-3" color="#fff" size={16} />
+                        </Button>
+                     </Link>
                   </div>
                </div>
 
