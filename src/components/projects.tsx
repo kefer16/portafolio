@@ -36,6 +36,7 @@ export default function Project() {
                               alt="html icon"
                               fill
                               src="/projects/api-contries.webp"
+                              loading="lazy"
                            />
                         </AspectRatio>
                      </CardContent>
@@ -69,6 +70,7 @@ export default function Project() {
                               alt="html icon"
                               fill
                               src="/projects/vas-app.webp"
+                              loading="lazy"
                            />
                         </AspectRatio>
                      </CardContent>
@@ -98,6 +100,7 @@ export default function Project() {
                               alt="html icon"
                               fill
                               src="/projects/vas-swagger.webp"
+                              loading="lazy"
                            />
                         </AspectRatio>
                      </CardContent>
@@ -131,6 +134,7 @@ export default function Project() {
                               alt="html icon"
                               fill
                               src="/projects/gamertec-frontend-home.webp"
+                              loading="lazy"
                            />
                         </AspectRatio>
                      </CardContent>

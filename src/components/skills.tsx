@@ -40,6 +40,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/html.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -55,6 +56,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/css.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -69,6 +71,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/js.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -84,6 +87,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/react.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -98,6 +102,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/postman.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -112,6 +117,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/swagger.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -126,6 +132,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/nest.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -140,6 +147,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/git.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -154,6 +162,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/github.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -169,6 +178,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/cisharp.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -183,6 +193,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/sql.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
@@ -198,6 +209,7 @@ export default function Skills() {
                         width={100}
                         height={100}
                         src="/svg/php.svg"
+                        loading="lazy"
                      />
                   </CardContent>
                </Card>
