@@ -27,17 +27,19 @@ export default function Banner() {
             before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] 
             after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]"
             ></div>
-            <div className="w-full px-5 flex flex-col  md:justify-around md:flex-row  relative place-items-center">
-               <div className="flex flex-col w-full md:w-2/4 gap-4">
+            <div className="w-full px-5 flex flex-col gap-4 relative place-items-center">
+               <div className="w-full flex flex-col gap-2 md:w-2/4">
                   <div className="flex flex-col gap-1">
                      <TypographyH2 text="Hola, 👋" />
                      <TypographyH1 text="Soy Kevin Morales" />
                      <TypografyLead text="Técnico en Computación e Informática" />
                   </div>
-                  <TypographyP text="Un desarrollador apasionado con más de dos años de experiencia en la creación y mantenimiento de aplicaciones web y de escritorio. Mi enfoque se centra en ofrecer soluciones eficientes y escalables tanto en el frontend como en el backend." />
-                  <div className="flex flex-row gap-5">
+                  <TypographyP text="Un desarrollador apasionado con más de dos años de experiencia en la creación
+                   y mantenimiento de aplicaciones web y de escritorio. Mi enfoque se centra en ofrecer 
+                   soluciones eficientes y escalables tanto en el frontend como en el backend." />
+                  <div className="grid grid-cols-2 gap-2 md:flex md:flex-row">
                      <Button
-                        className="transition duration-150 ease-in-out hover:scale-110"
+                        className="w-full transition duration-150 ease-in-out hover:scale-110 md:w-min"
                         variant="default"
                      >
                         Descargar CV
@@ -49,7 +51,7 @@ export default function Banner() {
                      </Button>
                      <Link href="#contact">
                         <Button
-                           className="transition duration-150 ease-in-out hover:scale-110"
+                           className="w-full transition duration-150 ease-in-out hover:scale-110 md:w-min"
                            variant="secondary"
                         >
                            Contacto
@@ -59,7 +61,7 @@ export default function Banner() {
                   </div>
                </div>
 
-               <div className="flex mt-10 justify-center items-center w-[250px] h-[250px]">
+               <div className="flex justify-center items-center w-[250px] md:h-[250px]">
                   <AspectRatio ratio={1 / 1}>
                      <Image
                         fill
