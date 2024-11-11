@@ -27,8 +27,8 @@ export default function Banner() {
             before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] 
             after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]"
             ></div>
-            <div className="w-full px-5 flex flex-col gap-4 relative place-items-center">
-               <div className="w-full flex flex-col gap-2 md:w-2/4">
+            <div className="w-full px-5 flex flex-col gap-4 relative place-items-center md:flex-row md:justify-around">
+               <div className="w-full flex flex-col gap-2 md:w-2/4 md:gap-4">
                   <div className="flex flex-col gap-1">
                      <TypographyH2 text="Hola, 👋" />
                      <TypographyH1 text="Soy Kevin Morales" />
@@ -37,7 +37,7 @@ export default function Banner() {
                   <TypographyP text="Un desarrollador apasionado con más de dos años de experiencia en la creación
                    y mantenimiento de aplicaciones web y de escritorio. Mi enfoque se centra en ofrecer 
                    soluciones eficientes y escalables tanto en el frontend como en el backend." />
-                  <div className="grid grid-cols-2 gap-2 md:flex md:flex-row">
+                  <div className="grid grid-cols-2 gap-4 md:flex md:flex-row">
                      <Button
                         className="w-full transition duration-150 ease-in-out hover:scale-110 md:w-min"
                         variant="default"
