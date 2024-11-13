@@ -29,8 +29,8 @@ export default function Header() {
                   </Link>
                </MenubarMenu>
                <MenubarMenu>
-                  <Link href="#contact">
-                     <MenubarTrigger>Contacto</MenubarTrigger>
+                  <Link href="#experience">
+                     <MenubarTrigger>Experiencia</MenubarTrigger>
                   </Link>
                </MenubarMenu>
             </Menubar>

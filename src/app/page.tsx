@@ -1,8 +1,8 @@
-import Banner from "@/components/banner1";
-import Contact from "@/components/contact";
+import Banner from "@/components/banner";
 import Skills from "@/components/skills";
 import Header from "@/components/header";
 import Project from "@/components/projects";
+import Experience from "@/components/experience";
 
 export default function Home() {
    return (
@@ -14,7 +14,8 @@ export default function Home() {
 
          <Skills />
          <Project />
-         <Contact />
+         <Experience />
+         {/* <Contact /> */}
       </main>
    );
 }
