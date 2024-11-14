@@ -10,7 +10,7 @@ import {
 import Link from "next/link";
 export default function Header() {
    return (
-      <div className="fixed flex w-full border justify-center z-50 backdrop-blur">
+      <div className="fixed flex w-full border-b justify-center z-50 backdrop-blur">
          <div className="flex justify-center w-full max-w-[1440px]">
             <Menubar>
                <MenubarMenu>
