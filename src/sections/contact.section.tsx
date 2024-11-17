@@ -9,7 +9,7 @@ import TypographyH2 from "@/components/typography-h2";
 
 export default function Contact() {
    return (
-      <div
+      <section
          id="contact"
          className="flex w-full px-5 justify-center min-h-screen"
       >
@@ -68,6 +68,6 @@ export default function Contact() {
                </Card>
             </div>
          </div>
-      </div>
+      </section>
    );
 }

@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Skills() {
     const skills = SkillsData;
     return (
-        <div id="skills" className="flex w-full px-5 justify-center min-h-screen">
+        <section id="skills" className="flex w-full px-5 justify-center min-h-screen">
             <div className="flex flex-col mt-[80px] w-full max-w-[1440px] py-5">
                 <TypographyH2 text="Habilidades" />
                 <div className="w-full md:w-[600px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
@@ -31,6 +31,6 @@ export default function Skills() {
                     }
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

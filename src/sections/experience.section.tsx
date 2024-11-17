@@ -6,7 +6,7 @@ import TypographyH2 from "@/components/typography-h2";
 export default function Experience() {
     const experiences: IExperience[] = ExperiencesData;
     return (
-        <div
+        <section
             id="experience"
             className="flex w-full px-5 justify-center min-h-screen"
         >
@@ -53,6 +53,6 @@ export default function Experience() {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
