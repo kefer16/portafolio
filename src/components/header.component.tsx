@@ -1,12 +1,4 @@
-import {
-   Menubar,
-   MenubarContent,
-   MenubarItem,
-   MenubarMenu,
-   MenubarSeparator,
-   MenubarShortcut,
-   MenubarTrigger,
-} from "@/components/ui/menubar";
+import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 import Link from "next/link";
 export default function Header() {
    return (
@@ -14,7 +6,7 @@ export default function Header() {
          <div className="flex justify-center w-full max-w-[1440px]">
             <Menubar>
                <MenubarMenu>
-                  <Link href="#home">
+                  <Link href="#presentation">
                      <MenubarTrigger>Inicio</MenubarTrigger>
                   </Link>
                </MenubarMenu>

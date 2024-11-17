@@ -1,18 +1,11 @@
 import React from "react";
-import TypographyH2 from "./typography-h2";
-import {
-   Card,
-   CardContent,
-   CardDescription,
-   CardFooter,
-   CardHeader,
-   CardTitle,
-} from "./ui/card";
-import { Label } from "./ui/label";
-import { Input } from "./ui/input";
-import { Button } from "./ui/button";
-import { Textarea } from "./ui/textarea";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "@/components/ui/card";
 import { SendHorizonal } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import TypographyH2 from "@/components/typography-h2";
 
 export default function Contact() {
    return (
@@ -57,17 +50,14 @@ export default function Contact() {
                            </div>
                            <div className="flex flex-col space-y-1.5">
                               <Label htmlFor="message">Mensaje</Label>
-                              <Textarea
-                                 name="message"
-                                 placeholder="Ingesa el mensaje"
-                              />
+                              <Textarea name="message" placeholder="Ingesa el mensaje" />
                            </div>
                         </div>
                      </form>
                   </CardContent>
                   <CardFooter className="flex">
                      <Button className="transition duration-150 ease-in-out hover:scale-110">
-                        Enviar{" "}
+                        Enviar
                         <SendHorizonal
                            className="ml-3"
                            color="#fff"

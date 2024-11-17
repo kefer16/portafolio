@@ -1,17 +1,14 @@
-import Banner from "@/components/banner";
-import Skills from "@/components/skills";
-import Header from "@/components/header";
-import Project from "@/components/projects";
-import Experience from "@/components/experience";
+import Header from "@/components/header.component";
+import Experience from "@/sections/experience.section";
+import Presentation from "@/sections/presentation.section";
+import Project from "@/sections/projects.section";
+import Skills from "@/sections/skills.section";
 
 export default function Home() {
    return (
-      <main className="flex flex-col ">
+      <main className="flex flex-col">
          <Header />
-         <div id="home" className="flex flex-col min-h-screen justify-center">
-            <Banner />
-         </div>
-
+         <Presentation />
          <Skills />
          <Project />
          <Experience />
