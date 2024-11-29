@@ -42,7 +42,7 @@ export default function Project() {
                                         <div className="flex gap-2 flex-wrap">
                                             {
                                                 project.technologies && project.technologies.length > 0 && project.technologies.map((technology, index) => (
-                                                    <Badge key={index} className="text-gray-300 bg-gray-500 transition ease-in-out duration-150 group-hover:bg-primary">
+                                                    <Badge key={index} className="text-gray-300 transition ease-in-out duration-150 group-hover:bg-primary lg:bg-gray-500">
                                                         {technology}
                                                     </Badge>
                                                 ))
