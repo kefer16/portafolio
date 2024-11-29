@@ -31,7 +31,7 @@ export default function Project() {
                                     <CardContent className="flex flex-col gap-4">
                                         <AspectRatio ratio={4 / 3}>
                                             <Image
-                                                className="w-full h-[300px] transition ease-in-out delay-150 group-hover:grayscale-0 lg:grayscale"
+                                                className="w-full h-[300px] transition ease-in-out duration-150 group-hover:grayscale-0 lg:grayscale"
                                                 alt={project.alt}
                                                 fill
                                                 src={project.src}
@@ -42,7 +42,7 @@ export default function Project() {
                                         <div className="flex gap-2 flex-wrap">
                                             {
                                                 project.technologies && project.technologies.length > 0 && project.technologies.map((technology, index) => (
-                                                    <Badge key={index} className="text-gray-300 bg-gray-500 transition ease-in-out delay-150 group-hover:bg-primary">
+                                                    <Badge key={index} className="text-gray-300 bg-gray-500 transition ease-in-out duration-150 group-hover:bg-primary">
                                                         {technology}
                                                     </Badge>
                                                 ))

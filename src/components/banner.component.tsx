@@ -22,7 +22,7 @@ export default function Banner() {
             <div className="w-full px-5 flex flex-col gap-4 relative place-items-center md:flex-row md:justify-around">
                <div className="w-full flex flex-col gap-2 md:w-2/4 md:gap-4">
                   <div className="flex flex-col gap-1">
-                     <TypographySpan className="text-2xl font-semibold">{presentation.welcome}</TypographySpan>
+                     <TypographySpan className="text-2xl font-semibold animate-bounce">{presentation.welcome}</TypographySpan>
                      <div className="flex gap-2 items-end">
                         <TypographySpan className="text-4xl lg:text-5xl">{presentation.prefix}</TypographySpan>
                         <TypographyH1>{presentation.short_name}</TypographyH1>
