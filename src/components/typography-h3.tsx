@@ -1,10 +1,9 @@
-interface Props {
-   text: string;
-}
-export function TypographyH3({ text }: Props) {
+import { ReactNode } from "react";
+
+export function TypographyH3({ children }: Readonly<{ children: ReactNode }>) {
    return (
       <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-         {text}
+         {children}
       </h3>
    );
 }

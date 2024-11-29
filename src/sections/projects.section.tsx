@@ -18,7 +18,7 @@ export default function Project() {
         <section id="projects" className="flex w-full px-5 justify-center min-h-screen" >
             <div className="flex flex-col w-full max-w-[1440px] py-5">
                 <div className="flex flex-col gap-2 mt-[80px]">
-                    <TypographyH2 text="Proyectos" />
+                    <TypographyH2>Proyectos</TypographyH2>
                     <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
                         {
                             projects && projects.map((project) => (
@@ -38,7 +38,7 @@ export default function Project() {
                                                 loading="lazy"
                                             />
                                         </AspectRatio>
-                                        <TypographyLead text={project.description} />
+                                        <TypographyLead>{project.description}</TypographyLead>
                                         <div className="flex gap-2 flex-wrap">
                                             {
                                                 project.technologies && project.technologies.length > 0 && project.technologies.map((technology, index) => (

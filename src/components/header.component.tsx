@@ -1,30 +1,23 @@
 import { Menubar, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
+import { MenusData } from "@/data/menus.data";
+import { IMenu } from "@/types/menu.interface";
 import Link from "next/link";
+
 export default function Header() {
+   const menus = MenusData;
    return (
       <div className="fixed flex w-full border-b justify-center z-50 backdrop-blur">
          <div className="flex justify-center w-full max-w-[1440px]">
             <Menubar>
-               <MenubarMenu>
-                  <Link href="#presentation">
-                     <MenubarTrigger>Inicio</MenubarTrigger>
-                  </Link>
-               </MenubarMenu>
-               <MenubarMenu>
-                  <Link href="#skills">
-                     <MenubarTrigger>Habilidades</MenubarTrigger>
-                  </Link>
-               </MenubarMenu>
-               <MenubarMenu>
-                  <Link href="#projects">
-                     <MenubarTrigger>Proyectos</MenubarTrigger>
-                  </Link>
-               </MenubarMenu>
-               <MenubarMenu>
-                  <Link href="#experience">
-                     <MenubarTrigger>Experiencia</MenubarTrigger>
-                  </Link>
-               </MenubarMenu>
+               {
+                  menus.map((menu: IMenu) => (
+                     <MenubarMenu key={menu.id}>
+                        <Link href={menu.link}>
+                           <MenubarTrigger>{menu.name}</MenubarTrigger>
+                        </Link>
+                     </MenubarMenu>
+                  ))
+               }
             </Menubar>
          </div>
       </div>

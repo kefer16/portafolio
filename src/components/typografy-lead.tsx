@@ -1,8 +1,6 @@
-import React from "react";
-interface Props {
-   text: string;
-}
+import { ReactNode } from "react";
 
-export default function TypographyLead({ text }: Props) {
-   return <h2 className="text-xl text-muted-foreground">{text}</h2>;
+
+export default function TypographyLead({ children }: Readonly<{ children: ReactNode }>) {
+   return <h2 className="text-xl text-muted-foreground">{children}</h2>;
 }

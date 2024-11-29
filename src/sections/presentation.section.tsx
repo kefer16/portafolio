@@ -5,6 +5,5 @@ export default function Presentation() {
       <section id="presentation" className="flex flex-col min-h-screen justify-center">
          <Banner />
       </section>
-
    )
 }

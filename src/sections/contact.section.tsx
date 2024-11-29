@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader } from "@/components/ui/card";
 import { SendHorizonal } from "lucide-react";
 import { Label } from "@/components/ui/label";
@@ -9,19 +8,15 @@ import TypographyH2 from "@/components/typography-h2";
 
 export default function Contact() {
    return (
-      <section
-         id="contact"
-         className="flex w-full px-5 justify-center min-h-screen"
-      >
+      <section id="contact" className="flex w-full px-5 justify-center min-h-screen" >
          <div className="flex flex-col w-full max-w-[1440px] py-5">
             <div className="flex flex-col gap-2 mt-[80px]">
-               <TypographyH2 text="Contacto" />
+               <TypographyH2>Contacto</TypographyH2>
                <Card className="w-full mt-5">
                   <CardHeader>
                      {/* <CardTitle>Create project</CardTitle> */}
                      <CardDescription>
-                        Completa el siguiente formulario y me pondré en contacto
-                        contigo lo antes posible.
+                        Completa el siguiente formulario y me pondré en contacto contigo lo antes posible.
                      </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -58,11 +53,7 @@ export default function Contact() {
                   <CardFooter className="flex">
                      <Button className="transition duration-150 ease-in-out hover:scale-110">
                         Enviar
-                        <SendHorizonal
-                           className="ml-3"
-                           color="#fff"
-                           size={16}
-                        />
+                        <SendHorizonal className="ml-3" color="#fff" size={16} />
                      </Button>
                   </CardFooter>
                </Card>
