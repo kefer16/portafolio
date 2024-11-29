@@ -12,7 +12,7 @@ export default function Skills() {
                 <div className="w-full md:w-[600px] mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-5">
                     {
                         skills && skills.map((skill) => (
-                            <Card key={skill.name} className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150">
+                            <Card key={skill.name} className="flex flex-col w-full transition ease-in-out duration-150 hover:-translate-y-2">
                                 <CardHeader className="text-center">
                                     <CardTitle>{skill.name}</CardTitle>
                                 </CardHeader>

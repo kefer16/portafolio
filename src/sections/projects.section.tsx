@@ -24,14 +24,14 @@ export default function Project() {
                             projects && projects.map((project) => (
                                 <Card
                                     key={project.id}
-                                    className="flex flex-col w-full transition ease-in-out  hover:-translate-y-2 duration-150 !p-0">
+                                    className="flex flex-col w-full !p-0 group">
                                     <CardHeader>
                                         <CardTitle>{project.title}</CardTitle>
                                     </CardHeader>
                                     <CardContent className="flex flex-col gap-4">
                                         <AspectRatio ratio={4 / 3}>
                                             <Image
-                                                className="w-full h-[300px] drop-shadow-[0_0_0.2rem_#ffffff82]"
+                                                className="w-full h-[300px] transition ease-in-out delay-150 group-hover:grayscale-0 lg:grayscale"
                                                 alt={project.alt}
                                                 fill
                                                 src={project.src}
@@ -42,7 +42,7 @@ export default function Project() {
                                         <div className="flex gap-2 flex-wrap">
                                             {
                                                 project.technologies && project.technologies.length > 0 && project.technologies.map((technology, index) => (
-                                                    <Badge key={index} className="text-gray-300 ">
+                                                    <Badge key={index} className="text-gray-300 bg-gray-500 transition ease-in-out delay-150 group-hover:bg-primary">
                                                         {technology}
                                                     </Badge>
                                                 ))
