@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import TypographyH2 from "@/components/typography-h2";
 
-export default function Contact() {
+function Contact() {
    return (
       <section id="contact" className="flex w-full px-5 justify-center min-h-screen" >
          <div className="flex flex-col w-full max-w-[1440px] py-5">
@@ -62,3 +62,5 @@ export default function Contact() {
       </section>
    );
 }
+
+export default Contact

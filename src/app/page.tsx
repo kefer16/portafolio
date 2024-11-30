@@ -1,10 +1,10 @@
-import Header from "@/components/header.component";
+import Header from "@/components/header";
 import Experience from "@/sections/experience.section";
 import Presentation from "@/sections/presentation.section";
 import Project from "@/sections/projects.section";
 import Skills from "@/sections/skills.section";
 
-export default function Home() {
+function Home() {
    return (
       <main className="flex flex-col">
          <Header />
@@ -16,3 +16,5 @@ export default function Home() {
       </main>
    );
 }
+
+export default Home

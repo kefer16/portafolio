@@ -1,9 +1,11 @@
-import Banner from "@/components/banner.component"
+import Banner from "@/components/banner"
 
-export default function Presentation() {
+function Presentation() {
    return (
       <section id="presentation" className="flex flex-col min-h-screen justify-center">
          <Banner />
       </section>
    )
 }
+
+export default Presentation

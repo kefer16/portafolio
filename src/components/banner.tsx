@@ -9,8 +9,8 @@ import Link from "next/link";
 import TypographySpan from "@/components/typography-span";
 import { PresentationData } from "@/data/presentacion.data";
 
-export default function Banner() {
-   const presentation = PresentationData;
+function Banner() {
+   const { welcome, prefix, short_name, last_name, degree, presentation, email, src_image } = PresentationData;
    return (
       <div className="flex w-full justify-center h-full">
          <div className="flex w-full max-w-[1440px] ">
@@ -22,20 +22,20 @@ export default function Banner() {
             <div className="w-full px-5 flex flex-col gap-4 relative place-items-center md:flex-row md:justify-around">
                <div className="w-full flex flex-col gap-2 md:w-2/4 md:gap-4">
                   <div className="flex flex-col gap-1">
-                     <TypographySpan className="text-2xl font-semibold animate-bounce">{presentation.welcome}</TypographySpan>
+                     <TypographySpan className="text-2xl font-semibold animate-bounce">{welcome}</TypographySpan>
                      <div className="flex gap-2 items-end">
-                        <TypographySpan className="text-4xl lg:text-5xl">{presentation.prefix}</TypographySpan>
-                        <TypographyH1>{presentation.short_name}</TypographyH1>
+                        <TypographySpan className="text-4xl lg:text-5xl">{prefix}</TypographySpan>
+                        <TypographyH1>{short_name}</TypographyH1>
                      </div>
-                     <TypographyLead>{presentation.degree}</TypographyLead>
+                     <TypographyLead>{degree}</TypographyLead>
                   </div>
-                  <TypographyP>{presentation.presentation}</TypographyP>
+                  <TypographyP>{presentation}</TypographyP>
                   <div className="grid grid-cols-2 gap-4 md:flex md:flex-row">
                      <Button variant="default" className="w-full transition duration-150 ease-in-out hover:scale-110 md:w-min">
                         Descargar CV
                         <ArrowDownToLine className="ml-3" color="#fff" size={16} />
                      </Button>
-                     <Link href={`mailto:${presentation.email}`}>
+                     <Link href={`mailto:${email}`}>
                         <Button variant="secondary" className="w-full transition duration-150 ease-in-out hover:scale-110 md:w-min">
                            Contacto
                            <Mail className="ml-3" color="#fff" size={16} />
@@ -49,8 +49,8 @@ export default function Banner() {
                      <Image
                         fill
                         className="relative drop-shadow-[0_0_2rem_#0141ff3f] rounded-full"
-                        src={presentation.src_image}
-                        alt={`foto de ${presentation.last_name}`}
+                        src={src_image}
+                        alt={`foto de ${last_name}`}
                         priority
                      />
                   </AspectRatio>
@@ -60,3 +60,5 @@ export default function Banner() {
       </div>
    );
 }
+
+export default Banner

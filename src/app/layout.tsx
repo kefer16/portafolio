@@ -3,7 +3,7 @@ import "./globals.css";
 import StarsCanvas from "@/components/stars-canvas";
 import { MetaData } from "@/data/metadata.data";
 import { ReactNode } from "react";
-import { ThemeProvider } from "@/components/theme-provider.component";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = MetaData;
 

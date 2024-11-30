@@ -3,7 +3,7 @@ import { MenusData } from "@/data/menus.data";
 import { IMenu } from "@/types/menu.interface";
 import Link from "next/link";
 
-export default function Header() {
+function Header() {
    const menus = MenusData;
    return (
       <div className="fixed flex w-full border-b justify-center z-50 backdrop-blur">
@@ -23,3 +23,5 @@ export default function Header() {
       </div>
    );
 }
+
+export default Header
