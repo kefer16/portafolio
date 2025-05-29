@@ -1,26 +1,30 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { AspectRatio } from "@radix-ui/react-aspect-ratio"
-import Image from "next/image"
 import TypographyLead from "./typografy-lead"
 import { Eye, Github } from "lucide-react"
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { IProject } from "@/types/project.interface"
 import { Badge } from "@/components/ui/badge";
+import { Image } from "@heroui/image"
+import { Card, CardBody, CardFooter, CardHeader } from "@heroui/card"
+import { Chip } from "@heroui/chip"
+import TypographyH3 from "./typography-h3"
+import { Button } from "@heroui/button"
 
 function ProjectCard({ project }: IProjectCard) {
    const { title, alt, src, description, technologies, url } = project;
    return (
-      <Card className="flex flex-col w-full !p-0 group">
+      <Card className="bg-slate-50/5 p-3 flex flex-col w-full group">
          <CardHeader>
-            <CardTitle>{title}</CardTitle>
+            <TypographyH3>{title}</TypographyH3>
          </CardHeader>
-         <CardContent className="flex flex-col gap-4">
+         <CardBody className="flex flex-col gap-4">
             <AspectRatio ratio={4 / 3}>
                <Image
-                  className="w-full h-[300px] transition ease-in-out duration-150 group-hover:grayscale-0 lg:grayscale"
+                  // isBlurred
+                  className="w-full transition ease-in-out duration-150 group-hover:grayscale-0 lg:grayscale"
                   alt={alt}
-                  fill
+                  // width={600}
                   src={src}
                   loading="lazy"
                />
@@ -29,18 +33,18 @@ function ProjectCard({ project }: IProjectCard) {
             <div className="flex gap-2 flex-wrap">
                {
                   technologies && technologies.length > 0 && technologies.map((technology, index) => (
-                     <Badge key={index} className="text-gray-300 transition ease-in-out duration-150 group-hover:bg-primary lg:bg-gray-500">
+                     <Chip key={index} className="transition ease-in-out duration-150 group-hover:bg-primary lg:bg-muted">
                         {technology}
-                     </Badge>
+                     </Chip>
                   ))
                }
             </div>
-         </CardContent>
+         </CardBody>
          <CardFooter className="flex mt-auto">
             <div className="w-full flex flex-row justify-between pt-3">
                {
                   !url.live_demo &&
-                  <Button variant="default" disabled >
+                  <Button color="primary" disabled >
                      Live Demo
                      <Eye className="ml-3" color="#fff" size={16} />
                   </Button>
@@ -48,7 +52,7 @@ function ProjectCard({ project }: IProjectCard) {
                {
                   url.live_demo &&
                   <Link href={url.live_demo} target="_blank" >
-                     <Button variant="default">
+                     <Button color="primary">
                         Live Demo
                         <Eye className="ml-3" color="#fff" size={16} />
                      </Button>
@@ -56,7 +60,7 @@ function ProjectCard({ project }: IProjectCard) {
                }
                {
                   !url.github &&
-                  <Button variant="secondary" disabled>
+                  <Button color="secondary" disabled>
                      GitHub
                      <Github className="ml-3" color="#fff" size={16} />
                   </Button>
@@ -64,7 +68,7 @@ function ProjectCard({ project }: IProjectCard) {
                {
                   url.github &&
                   <Link href={url.github} target="_blank" >
-                     <Button variant="secondary">
+                     <Button color="secondary">
                         GitHub
                         <Github className="ml-3" color="#fff" size={16} />
                      </Button>
