@@ -13,8 +13,8 @@ function Banner() {
    return (
       <div className="flex w-full justify-center h-full">
          <div className="flex w-full max-w-[1440px] ">
-            <div className="w-full px-5 flex flex-col gap-4 relative place-items-center md:flex-row md:justify-around">
-               <div className="w-full flex flex-col gap-2 md:w-2/4 md:gap-4">
+            <div className="w-full px-5 flex flex-col gap-10 relative place-items-center md:flex-row md:justify-around">
+               <div className="w-full flex flex-col gap-4 md:w-2/4 md:gap-4">
                   <div className="flex flex-col gap-1">
                      <TypographySpan className="text-2xl font-semibold animate-bounce">{welcome}</TypographySpan>
                      <div className="flex gap-2 items-end">
