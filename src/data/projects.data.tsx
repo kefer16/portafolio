@@ -6,12 +6,11 @@ export const ProjectData: IProject[] = [
       title: "Buscador de Países",
       alt: "imagen api contries",
       src: "/projects/api-contries.webp",
-      description: "Sitio web para buscar paises por region donde se encontrara informacion esencial del país, esta información se extrae de la API de restcountries.com",
+      description: "Sitio web para buscar paises por región donde se encontrará información esencial del país, esta información se extrae de la API de restcountries.com",
       technologies: [
-         "HTML",
-         "CSS",
-         "TypeScript",
          "React",
+         "TypeScript",
+         "Axios",
       ],
       url: {
          live_demo: "https://apicountries-frontmentor-pjl8qxn75-kefer16.vercel.app/",
@@ -25,9 +24,10 @@ export const ProjectData: IProject[] = [
       src: "/projects/vas-app.webp",
       description: "Aplicación móvil para gestión de proyectos",
       technologies: [
-         "StyleSheet",
-         "TypeScript",
          "ReactNative",
+         "TypeScript",
+         "StyleSheet",
+         "Expo",
       ],
       url: {
          live_demo: "",
@@ -41,13 +41,13 @@ export const ProjectData: IProject[] = [
       src: "/projects/vas-swagger.webp",
       description: "API REST, para comunicar la aplicación móvil Vas con la base de datos",
       technologies: [
-         "TypeScript",
          "NestJS",
+         "TypeScript",
          "Swagger",
          "MSSQL"
       ],
       url: {
-         live_demo: "https://vasapi-production.up.railway.app/swagger",
+         live_demo: "",
          github: "",
       }
    },
@@ -58,10 +58,9 @@ export const ProjectData: IProject[] = [
       src: "/projects/gamertec-frontend-home.webp",
       description: "Carrito de compras de productos tecnológicos, se trabajó apartado de administrador y pagos con Mercado Pago",
       technologies: [
-         "HTML",
-         "CSS",
-         "TypeScript",
          "React",
+         "TypeScript",
+         "Axios",
       ],
       url: {
          live_demo: "",

@@ -7,13 +7,12 @@ export const ExperiencesData: IExperience[] = [
       company: "Caja Trujillo",
       time: "noviembre 2022 – Actualidad",
       descriptions: [
-         "Proximamente ...",
+         "Próximamente ...",
       ],
       technologies: [
          "C#",
          "Visual Basic",
-         "SQL",
-         "JavaScript",
+         "MSSQL",
          "TypeScript",
          "Angular",
          "Git"
@@ -32,10 +31,9 @@ export const ExperiencesData: IExperience[] = [
       ],
       technologies: [
          "VFP",
-         "SQL",
-         "JavaScript",
-         "TypeScript",
+         "MSSQL",
          "Express",
+         "TypeScript",
          "Spring",
          "Git"
       ]
@@ -52,7 +50,7 @@ export const ExperiencesData: IExperience[] = [
       ],
       technologies: [
          "C#",
-         "SQL",
+         "MSSQL",
          "Git"
       ]
    },

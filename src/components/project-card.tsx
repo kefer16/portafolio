@@ -1,6 +1,6 @@
 import { AspectRatio } from "@radix-ui/react-aspect-ratio"
 import TypographyLead from "./typografy-lead"
-import { Eye, Github } from "lucide-react"
+import { CircleOff, Dot, ExternalLink, Eye, Github } from "lucide-react"
 // import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { IProject } from "@/types/project.interface"
@@ -44,23 +44,23 @@ function ProjectCard({ project }: IProjectCard) {
             <div className="w-full flex flex-row justify-between pt-3">
                {
                   !url.live_demo &&
-                  <Button color="primary" disabled >
-                     Live Demo
-                     <Eye className="ml-3" color="#fff" size={16} />
+                  <Button color="primary" isDisabled>
+                     Offline
+                     <CircleOff className="ml-3" color="#fff" size={16} />
                   </Button>
                }
                {
                   url.live_demo &&
                   <Link href={url.live_demo} target="_blank" >
                      <Button color="primary">
-                        Live Demo
-                        <Eye className="ml-3" color="#fff" size={16} />
+                        Online Demo
+                        <ExternalLink className="ml-3" color="#fff" size={16} />
                      </Button>
                   </Link>
                }
                {
                   !url.github &&
-                  <Button color="secondary" disabled>
+                  <Button color="secondary" isDisabled>
                      GitHub
                      <Github className="ml-3" color="#fff" size={16} />
                   </Button>
