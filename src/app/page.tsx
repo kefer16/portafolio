@@ -9,9 +9,9 @@ function Home() {
       <main className="flex flex-col">
          <Header />
          <Presentation />
-         <Technologies />
          <Project />
          <Experience />
+         <Technologies />
          {/* <Contact /> */}
       </main>
    );

@@ -8,17 +8,17 @@ export const MenusData: IMenu[] = [
    },
    {
       id: 2,
-      link: "#technologies",
-      name: "Tecnologías"
-   },
-   {
-      id: 3,
       link: "#projects",
       name: "Proyectos"
    },
    {
-      id: 4,
+      id: 3,
       link: "#experience",
       name: "Experiencia"
+   },
+   {
+      id: 4,
+      link: "#technologies",
+      name: "Tecnologías"
    },
 ]
