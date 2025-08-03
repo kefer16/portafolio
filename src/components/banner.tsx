@@ -25,7 +25,7 @@ function Banner() {
                   </div>
                   <TypographyP>{presentation}</TypographyP>
                   <div className="grid grid-cols-2 gap-4 md:flex md:flex-row">
-                     <Link href="/cv/CV_KEVIN_FERNANDO_MORALES_FIGUEROA.pdf" target="_blank">
+                     <Link href="/cv/cv-2025-web.pdf" target="_blank">
                         <Button color="primary" size="md" variant="shadow">
                            Descargar CV
                            <ArrowDownToLine className="ml-3" color="#fff" size={16} />
