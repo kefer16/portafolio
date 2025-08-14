@@ -1,15 +1,11 @@
-// import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-// import Image from 'next/image'
 import { ISkill } from "@/types/technology.interface"
 import { Image } from "@heroui/image";
-import TypographyH3 from "./typography-h3";
-import TypographyP from "./typography-p";
 import TypographyH4 from "./typography-h4";
 
 function SkillCard({ skill }: ISkillCard) {
    const { name, src } = skill;
    return (
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center hover:-translate-y-2 ease-in-out duration-300">
          <div className="text-center">
             <TypographyH4>{name}</TypographyH4>
          </div>
