@@ -1,5 +1,3 @@
-"use client";
-
 import IframeaSpotify from "@/components/iframe-spotify";
 import { Button } from "@heroui/button"
 import { Card } from "@heroui/card"

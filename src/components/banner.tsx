@@ -17,11 +17,22 @@ function Banner() {
                <div className="w-full flex flex-col gap-4 md:w-2/4 md:gap-4">
                   <div className="flex flex-col gap-1">
                      <TypographySpan className="text-2xl font-semibold animate-bounce">{welcome}</TypographySpan>
-                     <div className="flex gap-2 items-end">
+                     <div className="relative flex gap-2 items-end">
                         <TypographySpan className="text-4xl lg:text-5xl">{prefix}</TypographySpan>
                         <TypographyH1>{short_name}</TypographyH1>
+                        <Image
+                           isBlurred
+                           className="dark:hidden"
+                           alt={`chistmas tree icon`}
+                           height={50}
+                           src="/svg/christmas-tree.svg"
+                           loading="lazy"
+
+                        />
                      </div>
                      <TypographyLead>{degree}</TypographyLead>
+
+
                   </div>
                   <TypographyP>{presentation}</TypographyP>
                   <div className="grid grid-cols-2 gap-4 md:flex md:flex-row">
@@ -33,13 +44,13 @@ function Banner() {
                      </Link>
                      <Button as={Link} color="secondary" href={`mailto:${email}`} size="md" >
                         Contacto
-                        <Mail className="ml-3" color="#fff" size={16} />
+                        <Mail className="ml-3" size={16} />
                      </Button>
                   </div>
                </div>
-               <div className="flex justify-center items-center w-[250px] md:h-[250px]">
+               <div className="relative flex justify-center items-center w-[250px] md:h-[250px]">
                   <Image
-                     isBlurred
+                     // isBlurred
                      width={500}
                      src={src_image}
                      alt={`foto de ${last_name}`}

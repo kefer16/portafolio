@@ -12,7 +12,6 @@ function Home() {
          <Project />
          <Experience />
          <Technologies />
-         {/* <Contact /> */}
       </main>
    );
 }

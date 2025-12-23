@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 function TypographyH3({ children }: Readonly<{ children: ReactNode }>) {
    return (
-      <h3 className="text-2xl font-semibold text-slate-300">
+      <h3 className="text-2xl font-semibold">
          {children}
       </h3>
    );

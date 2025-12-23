@@ -33,7 +33,7 @@ function ProjectCard({ project }: IProjectCard) {
             <div className="flex gap-2 flex-wrap">
                {
                   technologies && technologies.length > 0 && technologies.map((technology, index) => (
-                     <Chip key={index} className="transition ease-in-out duration-150 group-hover:bg-primary lg:bg-muted">
+                     <Chip key={index}>
                         {technology}
                      </Chip>
                   ))
@@ -46,7 +46,7 @@ function ProjectCard({ project }: IProjectCard) {
                   !url.live_demo &&
                   <Button color="primary" isDisabled>
                      Offline
-                     <CircleOff className="ml-3" color="#fff" size={16} />
+                     <CircleOff className="ml-3" size={16} />
                   </Button>
                }
                {
@@ -54,7 +54,7 @@ function ProjectCard({ project }: IProjectCard) {
                   <Link href={url.live_demo} target="_blank" >
                      <Button color="primary">
                         Online Demo
-                        <ExternalLink className="ml-3" color="#fff" size={16} />
+                        <ExternalLink className="ml-3" size={16} />
                      </Button>
                   </Link>
                }
@@ -62,7 +62,7 @@ function ProjectCard({ project }: IProjectCard) {
                   !url.github &&
                   <Button color="secondary" isDisabled>
                      GitHub
-                     <Github className="ml-3" color="#fff" size={16} />
+                     <Github className="ml-3" size={16} />
                   </Button>
                }
                {
@@ -70,7 +70,7 @@ function ProjectCard({ project }: IProjectCard) {
                   <Link href={url.github} target="_blank" >
                      <Button color="secondary">
                         GitHub
-                        <Github className="ml-3" color="#fff" size={16} />
+                        <Github className="ml-3" size={16} />
                      </Button>
                   </Link>
                }

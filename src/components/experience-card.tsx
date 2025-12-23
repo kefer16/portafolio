@@ -26,7 +26,7 @@ function ExperienceCard({ experience }: IExperienceCard) {
             <div className="flex gap-2 flex-wrap">
                {
                   technologies && technologies.length > 0 && technologies.map((technology, index) => (
-                     <Chip key={index} className="text-gray-300 bg-primary transition ease-in-out duration-150 group-hover:bg-primary lg:bg-muted">
+                     <Chip key={index}>
                         {technology}
                      </Chip>
                   ))
