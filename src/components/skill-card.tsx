@@ -13,7 +13,7 @@ function SkillCard({ skill }: ISkillCard) {
             isBlurred
             className="p-5 drop-shadow-md dark:drop-shadow-[0_0_0.5rem_#ffffff50]"
             alt={`${name} icon`}
-            height={150}
+            height={100}
             src={src}
             loading="lazy"
          />
