@@ -64,8 +64,8 @@ function Header() {
          </NavbarContent  >
 
          <NavbarContent justify="end">
-            <Button style={{ backgroundColor: theme === "light" ? "" : "#B11226" }} isIconOnly startContent={theme === "dark" ? <CandyCane size={20} strokeWidth={2} /> : <Moon size={20} strokeWidth={2} />} onPress={() => theme === "light" ? setTheme('dark') : setTheme('light')}></Button>
-
+            <Button className="hidden dark:flex" style={{ backgroundColor: "#B11226" }} isIconOnly startContent={<CandyCane size={20} strokeWidth={2} />} onPress={() => theme === "light" ? setTheme('dark') : setTheme('light')}></Button>
+            <Button className="dark:hidden" isIconOnly startContent={<Moon size={20} strokeWidth={2} />} onPress={() => theme === "light" ? setTheme('dark') : setTheme('light')}></Button>
          </NavbarContent>
 
          <NavbarMenu>
