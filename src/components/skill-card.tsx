@@ -11,7 +11,7 @@ function SkillCard({ skill }: ISkillCard) {
          </div>
          <Image
             isBlurred
-            className="p-5 drop-shadow-[0_0_0.5rem_#ffffff50]"
+            className="p-5 drop-shadow-md dark:drop-shadow-[0_0_0.5rem_#ffffff50]"
             alt={`${name} icon`}
             height={150}
             src={src}
