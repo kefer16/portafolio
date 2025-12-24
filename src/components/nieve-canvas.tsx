@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, Suspense, HTMLAttributes } from "react";
+import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 // @ts-ignore
@@ -13,12 +13,11 @@ const StarBackground = (props: any) => {
    );
 
    useFrame((_, delta) => {
-      ref.current.rotation.x -= delta / 10;
-      ref.current.rotation.y -= delta / 15;
+      ref.current.rotation.x += delta / 7;
    });
 
    return (
-      <group rotation={[0, 0, Math.PI / 4]}>
+      <group rotation={[0, 0, Math.PI / 100]}>
          <Points
             ref={ref}
             positions={sphere}
@@ -28,7 +27,7 @@ const StarBackground = (props: any) => {
          >
             <PointMaterial
                transparent
-               size={0.004}
+               size={0.005}
                sizeAttenuation={true}
                dethWrite={false}
             />
@@ -37,7 +36,7 @@ const StarBackground = (props: any) => {
    );
 };
 
-const StarsCanvas = ({ classString }: StartCanvasProps) => (
+const NieveCanvas = ({ classString }: NieveCanvasProps) => (
    <div className={`w-full h-auto fixed inset-0 -z-60 ${classString}`}>
       <Canvas camera={{ position: [0, 0, 1] }}>
          <Suspense fallback={null}>
@@ -47,8 +46,8 @@ const StarsCanvas = ({ classString }: StartCanvasProps) => (
    </div>
 );
 
-interface StartCanvasProps {
+interface NieveCanvasProps {
    classString: string;
 }
 
-export default StarsCanvas;
+export default NieveCanvas;

@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 // import { ThemeProvider } from "@/components/theme-provider";
 import HeroUIProviders from "@/provider/hero-ui.provider";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
+import NieveCanvas from "@/components/nieve-canvas";
 
 export const metadata: Metadata = MetaData;
 // import { Noto_Sans } from "next/font/google"
@@ -22,7 +23,8 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
          <link rel="icon" href="/favicon.ico" sizes="any" />
          <body>
             <HeroUIProviders>
-               <StarsCanvas />
+               <StarsCanvas classString="hidden dark:flex" />
+               <NieveCanvas classString="dark:hidden" />
                <NextThemesProvider attribute="class" defaultTheme="dark">
 
                   {children}
