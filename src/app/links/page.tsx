@@ -9,7 +9,7 @@ import { Suspense } from "react"
 function LinksPage() {
 
    return (
-      <main className="flex flex-col min-h-screen justify-center items-center p-4">
+      <main className="relative z-20 flex flex-col min-h-screen justify-center items-center p-4">
          <Card className="w-full md:w-[500px]  bg-slate-50/5 p-4 flex flex-col gap-8">
             <div className="flex flex-col items-center gap-3">
                <div className="flex">
