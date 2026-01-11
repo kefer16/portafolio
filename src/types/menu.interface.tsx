@@ -1,5 +1,5 @@
 export interface IMenu {
    id: number;
-   link: `#${string}`;
+   link: `/#${string}`;
    name: string;
 }

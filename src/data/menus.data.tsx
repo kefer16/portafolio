@@ -3,22 +3,22 @@ import { IMenu } from "@/types/menu.interface";
 export const MenusData: IMenu[] = [
    {
       id: 1,
-      link: "#presentation",
+      link: "/#presentation",
       name: "Inicio"
    },
    {
       id: 2,
-      link: "#projects",
+      link: "/#projects",
       name: "Proyectos"
    },
    {
       id: 3,
-      link: "#experience",
+      link: "/#experience",
       name: "Experiencia"
    },
    {
       id: 4,
-      link: "#technologies",
+      link: "/#technologies",
       name: "Tecnologías"
    },
 ]

@@ -6,13 +6,13 @@ import Technologies from "@/sections/technologies.section";
 
 function Home() {
    return (
-      <main className="relative flex flex-col z-20">
+      <>
          <Header />
          <Presentation />
          <Project />
          <Experience />
          <Technologies />
-      </main>
+      </>
    );
 }
 

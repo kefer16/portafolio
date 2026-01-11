@@ -26,8 +26,9 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                <StarsCanvas classString="hidden dark:flex" />
                <NieveCanvas classString="dark:hidden" />
                <NextThemesProvider attribute="class" defaultTheme="dark">
-
-                  {children}
+                  <main className="relative z-20 min-h-screen flex flex-col">
+                     {children}
+                  </main>
                </NextThemesProvider>
             </HeroUIProviders>
          </body>
