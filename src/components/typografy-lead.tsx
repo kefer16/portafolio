@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 function TypographyLead({ children }: Readonly<{ children: ReactNode }>) {
-   return <h2 className="text-muted-foreground">{children}</h2>;
+   return <p className="text-muted-foreground">{children}</p>;
 }
 
 export default TypographyLead

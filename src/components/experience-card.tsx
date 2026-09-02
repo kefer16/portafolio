@@ -8,7 +8,7 @@ function ExperienceCard({ experience }: IExperienceCard) {
          <div className="relative pb-12 md:col-span-2">
             <div className="sticky top-0">
                <span className="text-primary -left-[44px] -top-3 absolute rounded-full text-5xl transition ease-in-out duration-150 group-hover:text-primary lg:text-gray-500">•</span>
-               <h3 className="text-2xl font-bold text-primary transition ease-in-out duration-150 group-hover:text-primary lg:text-muted-foreground">{job_position}</h3>
+               <h3 className="text-2xl font-bold text-foreground transition ease-in-out duration-150 group-hover:text-primary">{job_position}</h3>
                <h4 className="font-semibold text-xl">{company}</h4>
                <time className="p-0 m-0 text-muted-foreground text-sm">{time}</time>
             </div>
