@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import StarsCanvas from "@/components/stars-canvas";
+import ThemeCanvas from "@/components/theme-canvas";
 import { MetaData } from "@/data/metadata.data";
 import { ReactNode } from "react";
 // import { ThemeProvider } from "@/components/theme-provider";
 import HeroUIProviders from "@/provider/hero-ui.provider";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import NieveCanvas from "@/components/nieve-canvas";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = MetaData;
 // import { Noto_Sans } from "next/font/google"
@@ -22,12 +22,18 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <html id="html-background" className="scroll-smooth" lang="es">
          <link rel="icon" href="/favicon.ico" sizes="any" />
          <body>
+            <a
+               href="#main-content"
+               className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-background focus:px-4 focus:py-2 focus:text-foreground"
+            >
+               Saltar al contenido
+            </a>
             <HeroUIProviders>
-               <StarsCanvas classString="hidden dark:flex" />
-               <NieveCanvas classString="dark:hidden" />
                <NextThemesProvider attribute="class" defaultTheme="dark">
-                  <main className="relative z-20 min-h-screen flex flex-col">
+                  <ThemeCanvas />
+                  <main id="main-content" className="relative z-20 min-h-screen flex flex-col">
                      {children}
+                     <Footer />
                   </main>
                </NextThemesProvider>
             </HeroUIProviders>

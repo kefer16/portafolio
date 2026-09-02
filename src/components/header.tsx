@@ -18,7 +18,7 @@ function Header() {
    const menus = MenusData;
 
    return (
-      <Navbar isBlurred isBordered >
+      <Navbar isBlurred isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
          <NavbarContent justify="start" >
             <NavbarMenuToggle
                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -51,7 +51,7 @@ function Header() {
                   <NavbarItem key={menu.id} >
                      <Link
                         size="md"
-                        className="font-semibold"
+                        className={`font-semibold ${menu.link === path ? "underline underline-offset-4" : ""}`}
                         color={menu.link === path ? "primary" : "foreground"}
                         href={menu.link}
                         onClick={() => setPath(menu.link)}>
@@ -73,9 +73,12 @@ function Header() {
                <NavbarMenuItem key={`${item}-${index}`}>
                   <Link
                      href={item.link}
-                     className="w-full"
+                     className={`w-full ${item.link === path ? "underline underline-offset-4" : ""}`}
                      color={item.link === path ? "primary" : "foreground"}
-                     onClick={() => setPath(item.link)}
+                     onClick={() => {
+                        setPath(item.link);
+                        setIsMenuOpen(false);
+                     }}
                      size="lg"
                   >
                      {item.name}

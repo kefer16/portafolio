@@ -10,6 +10,7 @@ import { Image } from "@heroui/image";
 
 function Banner() {
    const { welcome, prefix, short_name, last_name, degree, presentation, email, src_image } = PresentationData;
+   const isChristmasSeason = new Date().getMonth() === 11;
    return (
       <div className="flex w-full justify-center h-full">
          <div className="flex w-full max-w-[1440px] ">
@@ -20,15 +21,15 @@ function Banner() {
                      <div className="flex gap-2 items-end">
                         {/* <TypographySpan className="text-4xl lg:text-5xl">{prefix}</TypographySpan> */}
                         <TypographyH1>{short_name}</TypographyH1>
-                        <Image
-                           isBlurred
-                           className="dark:hidden h-[40px] md:h-[50px]"
-                           alt={`chistmas tree icon`}
-                           // height={50}
-                           src="/svg/christmas-tree.svg"
-                           loading="lazy"
-
-                        />
+                        {isChristmasSeason && (
+                           <Image
+                              isBlurred
+                              className="dark:hidden h-[40px] md:h-[50px]"
+                              alt={`chistmas tree icon`}
+                              src="/svg/christmas-tree.svg"
+                              loading="lazy"
+                           />
+                        )}
                      </div>
                      <TypographyLead>{degree}</TypographyLead>
 

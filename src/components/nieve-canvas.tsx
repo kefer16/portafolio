@@ -4,6 +4,7 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
 import { useMemo, useRef } from 'react'
 import * as THREE from 'three'
+import CanvasErrorBoundary from './canvas-error-boundary'
 
 function SnowEffect() {
    const pointsRef = useRef<THREE.Points>(null);
@@ -66,19 +67,19 @@ function SnowEffect() {
 }
 
 
-const NieveCanvas = ({ classString }: NieveCanvasProps) => (
-   <div className={`w-full h-auto fixed inset-0 z-10  ${classString}`}>
-      <Canvas
-         camera={{ position: [0, 0, 15], fov: 75 }}
-
-      >
-         <SnowEffect />
-      </Canvas>
+const NieveCanvas = () => (
+   <div
+      aria-hidden="true"
+      className="w-full h-auto fixed inset-0 z-10 pointer-events-none bg-transparent flex"
+   >
+      <CanvasErrorBoundary>
+         <Canvas
+            camera={{ position: [0, 0, 15], fov: 75 }}
+         >
+            <SnowEffect />
+         </Canvas>
+      </CanvasErrorBoundary>
    </div>
 );
-
-interface NieveCanvasProps {
-   classString: string;
-}
 
 export default NieveCanvas;
