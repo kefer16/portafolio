@@ -14,7 +14,7 @@ import { Button } from "@heroui/button"
 function ProjectCard({ project }: IProjectCard) {
    const { title, alt, src, description, technologies, url } = project;
    return (
-      <Card className="bg-slate-50/5 p-3 flex flex-col w-full group">
+      <Card className="bg-slate-50/5 p-3 flex flex-col w-full group transition duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg">
          <CardHeader>
             <TypographyH3>{title}</TypographyH3>
          </CardHeader>
