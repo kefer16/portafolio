@@ -1,6 +1,7 @@
 import { AspectRatio } from "@radix-ui/react-aspect-ratio"
 import TypographyLead from "./typografy-lead"
-import { CircleOff, Dot, ExternalLink, Eye, Github } from "lucide-react"
+import { CircleOff, Dot, ExternalLink, Eye } from "lucide-react"
+import GithubIcon from "@/components/icons/github-icon"
 // import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { IProject } from "@/types/project.interface"
@@ -62,7 +63,7 @@ function ProjectCard({ project }: IProjectCard) {
                   !url.github &&
                   <Button color="secondary" isDisabled>
                      GitHub
-                     <Github className="ml-3" size={16} />
+                     <GithubIcon className="ml-3" size={16} />
                   </Button>
                }
                {
@@ -70,7 +71,7 @@ function ProjectCard({ project }: IProjectCard) {
                   <Link href={url.github} target="_blank" >
                      <Button color="secondary">
                         GitHub
-                        <Github className="ml-3" size={16} />
+                        <GithubIcon className="ml-3" size={16} />
                      </Button>
                   </Link>
                }

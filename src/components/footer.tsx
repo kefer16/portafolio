@@ -1,6 +1,7 @@
 import { Link } from "@heroui/link";
-import { Github, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { PresentationData } from "@/data/presentacion.data";
+import GithubIcon from "@/components/icons/github-icon";
 
 function Footer() {
    const { email, last_name } = PresentationData;
@@ -17,7 +18,7 @@ function Footer() {
                   aria-label="GitHub de Kevin Morales"
                   color="foreground"
                >
-                  <Github size={20} strokeWidth={2} />
+                  <GithubIcon size={20} />
                </Link>
                <Link
                   href={`mailto:${email}`}
