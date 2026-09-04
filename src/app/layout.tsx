@@ -19,7 +19,7 @@ export const metadata: Metadata = MetaData;
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
    return (
-      <html id="html-background" className="scroll-smooth" lang="es">
+      <html id="html-background" className="scroll-smooth" lang="es" suppressHydrationWarning>
          <link rel="icon" href="/favicon.ico" sizes="any" />
          <body>
             <a

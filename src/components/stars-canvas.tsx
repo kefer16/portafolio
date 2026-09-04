@@ -8,7 +8,7 @@ import * as random from "maath/random/dist/maath-random.esm";
 import CanvasErrorBoundary from "./canvas-error-boundary";
 
 const StarBackground = (props: any) => {
-   const ref: any = useRef();
+   const ref: any = useRef(null);
    const [sphere] = useState(() => {
       // maath's default RNG can occasionally divide by a zero-length vector and
       // produce NaN positions (see https://github.com/pmndrs/maath/issues/9),
@@ -42,7 +42,7 @@ const StarBackground = (props: any) => {
                transparent
                size={0.004}
                sizeAttenuation={true}
-               dethWrite={false}
+               depthWrite={false}
             />
          </Points>
       </group>

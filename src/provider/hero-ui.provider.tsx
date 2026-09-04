@@ -1,3 +1,5 @@
+"use client";
+
 import { HeroUIProvider } from '@heroui/react'
 
 export default function HeroUIProviders({ children }: { children: React.ReactNode }) {

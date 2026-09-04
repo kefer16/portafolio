@@ -2,8 +2,14 @@
 
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import StarsCanvas from "@/components/stars-canvas";
-import NieveCanvas from "@/components/nieve-canvas";
+import dynamic from "next/dynamic";
+
+// @react-three/fiber runs react-reconciler as soon as its module is imported,
+// which crashes Next's server-side render. next/dynamic with ssr:false keeps
+// it out of the server bundle entirely (a plain "use client" isn't enough,
+// since client components still get imported and rendered once on the server).
+const StarsCanvas = dynamic(() => import("@/components/stars-canvas"), { ssr: false });
+const NieveCanvas = dynamic(() => import("@/components/nieve-canvas"), { ssr: false });
 
 /**
  * Mounts only the canvas for the active theme instead of hiding the other one
