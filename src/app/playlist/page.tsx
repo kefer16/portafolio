@@ -1,13 +1,13 @@
 import HeaderSimply from "@/components/header-simply";
-import IframeaSpotify from "@/components/iframe-spotify";
+import IframeAppleMusic from "@/components/iframe-apple-music";
 import { Card } from "@heroui/card"
 import { Image } from "@heroui/image"
-import { Suspense } from "react"
 
 function LinksPage() {
 
    return (
       <>
+         <link rel="preconnect" href="https://embed.music.apple.com" />
          <HeaderSimply />
          <div className="flex justify-center items-center min-h-[calc(100vh-65px)] px-1 py-4">
             <Card shadow="sm" className="w-full md:w-[500px] bg-slate-50/10 py-8 px-4 flex flex-col gap-4">
@@ -31,14 +31,7 @@ function LinksPage() {
                   <div className="rounded-lg flex flex-col gap-2 overflow-hidden">
                      <p className="text-base text-foreground text-center">Playlist</p>
 
-                     <Suspense
-                        fallback={
-                           <div className="flex items-center justify-center h-[352px]">
-                              <p className="text-muted-foreground">Cargando playlist de Spotify...</p>
-                           </div>
-                        }>
-                        <IframeaSpotify />
-                     </Suspense>
+                     <IframeAppleMusic />
                   </div>
 
                   {/* <Button startContent={<Github size={18} strokeWidth={2} color="#fff" />} as={Link} href="https://github.com/kefer16?tab=repositories" target="_blank" radius="lg" className="bg-black hover:scale-105" >Github</Button> */}
