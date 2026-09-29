@@ -40,7 +40,7 @@ function Banner() {
                         {isChristmasSeason && (
                            <Image
                               isBlurred
-                              className="dark:hidden h-[40px] md:h-[50px]"
+                              className="hidden light-theme:block h-[40px] md:h-[50px]"
                               alt={`chistmas tree icon`}
                               src="/svg/christmas-tree.svg"
                               loading="lazy"

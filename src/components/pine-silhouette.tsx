@@ -69,7 +69,7 @@ function PineSilhouette() {
    return (
       <div
          aria-hidden="true"
-         className="dark:hidden fixed bottom-0 inset-x-0 z-10 pointer-events-none h-[130px] sm:h-[170px]"
+         className="hidden light-theme:block fixed bottom-0 inset-x-0 z-10 pointer-events-none h-[130px] sm:h-[170px]"
       >
          <svg
             viewBox="0 0 1600 220"

@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 // since client components still get imported and rendered once on the server).
 const StarsCanvas = dynamic(() => import("@/components/stars-canvas"), { ssr: false });
 const NieveCanvas = dynamic(() => import("@/components/nieve-canvas"), { ssr: false });
+const HalloweenCanvas = dynamic(() => import("@/components/halloween-canvas"), { ssr: false });
 
 /**
  * Mounts only the canvas for the active theme instead of hiding the other one
@@ -24,7 +25,9 @@ function ThemeCanvas() {
 
    if (!mounted) return null;
 
-   return resolvedTheme === "light" ? <NieveCanvas /> : <StarsCanvas />;
+   if (resolvedTheme === "light") return <NieveCanvas />;
+   if (resolvedTheme === "halloween") return <HalloweenCanvas />;
+   return <StarsCanvas />;
 }
 
 export default ThemeCanvas;

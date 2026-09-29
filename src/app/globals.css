@@ -59,6 +59,37 @@
 
       --ring: 230 100% 42%;
    }
+
+   .halloween {
+      --background: 270 45% 5%;
+      --foreground: 270 15% 94%;
+
+      --muted: 270 30% 14%;
+      --muted-foreground: 270 15% 68%;
+
+      --popover: 270 42% 7%;
+      --popover-foreground: 270 15% 94%;
+
+      --card: 270 42% 7%;
+      --card-foreground: 270 15% 94%;
+
+      --border: 270 30% 16%;
+      --input: 270 30% 16%;
+
+      --primary: 25 90% 55%;
+      --primary-foreground: 270 45% 5%;
+
+      --secondary: 280 45% 20%;
+      --secondary-foreground: 270 15% 94%;
+
+      --accent: 90 55% 45%;
+      --accent-foreground: 270 45% 5%;
+
+      --destructive: 0 70% 40%;
+      --destructive-foreground: 270 15% 94%;
+
+      --ring: 25 90% 55%;
+   }
 }
 
 
@@ -73,10 +104,10 @@
 
    /* Light theme: a flat sky-blue felt static, so it's a gradient instead -
       deeper blue up top fading into a warm, low winter-sun glow near the
-      bottom. Dark theme keeps its solid near-black (the starfield already
-      provides all the depth there). background-attachment keeps it pinned
-      to the viewport instead of scrolling with the page. */
-   html:not(.dark) body {
+      bottom. Dark and halloween keep a solid color (their canvases already
+      provide the depth). background-attachment keeps it pinned to the
+      viewport instead of scrolling with the page. */
+   html.light body {
       background: linear-gradient(to bottom, hsl(212, 62%, 58%) 0%, hsl(206, 55%, 72%) 45%, hsl(36, 70%, 87%) 100%);
       background-attachment: fixed;
    }
@@ -85,21 +116,14 @@
       @apply scroll-smooth;
    }
 
-   /* The dark theme's starfield/nebula background sits directly behind all
-      page content; a stray bright star or a nebula tint can land right on
-      top of a letter and blend in. A soft shadow keeps text readable
-      regardless of what's rendering behind it, without dimming the effect
-      itself. */
-   .dark main {
+   /* The dark and halloween themes' canvas backgrounds sit directly behind
+      all page content; a stray bright star/bat or a glow tint can land
+      right on top of a letter and blend in. A soft shadow keeps text
+      readable regardless of what's rendering behind it, without dimming
+      the effect itself. */
+   .dark main,
+   .halloween main {
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65), 0 1px 12px rgba(0, 0, 0, 0.35);
-   }
-
-   /* The light theme's pine treeline is fixed to the bottom of the
-      viewport, so whatever content ends up last on the page (the footer)
-      would otherwise scroll right into it. This reserves clear space below
-      the page's own content so the footer always settles above the trees. */
-   html:not(.dark) main {
-      padding-bottom: 0px;
    }
 }
 

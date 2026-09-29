@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss"
 const { heroui } = require("@heroui/react");
+const plugin = require("tailwindcss/plugin");
 
 const config = {
   darkMode: ["class"],
@@ -76,7 +77,19 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), heroui()],
+  plugins: [
+    require("tailwindcss-animate"),
+    heroui(),
+    // next-themes adds the theme name as a class on <html> (confirmed:
+    // class="light" / class="dark" / class="halloween"), same mechanism
+    // Tailwind's own `dark:` variant relies on - these two extend that to
+    // the other two themes so decorative pieces can use light-theme:/
+    // halloween: the same way the rest of the app already uses dark:.
+    plugin(function ({ addVariant }: { addVariant: (name: string, selector: string) => void }) {
+      addVariant("light-theme", "html.light &");
+      addVariant("halloween", "html.halloween &");
+    }),
+  ],
 } satisfies Config
 
 export default config

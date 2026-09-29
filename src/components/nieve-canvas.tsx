@@ -117,6 +117,7 @@ interface WarmGlowProps {
    position: [number, number, number];
    scale: number;
    opacity: number;
+   seed: number;
 }
 
 // Soft warm patches standing in for string-light glow, the light-theme
@@ -124,12 +125,24 @@ interface WarmGlowProps {
 // blending here, unlike the nebula: additive light washes out against this
 // bright sky-blue background instead of glowing the way it does over near-
 // black, so a plain soft-edged blob reads better.
-function WarmGlow({ rgb, position, scale, opacity }: WarmGlowProps) {
+//
+// A slow, gentle opacity "breathing" gives it some life - much subtler than
+// the halloween pumpkin's candle flicker (one low-frequency sine instead of
+// several fast ones), so it reads as a soft pulse rather than something
+// that pulls focus off the actual page content.
+function WarmGlow({ rgb, position, scale, opacity, seed }: WarmGlowProps) {
+   const materialRef = useRef<THREE.SpriteMaterial>(null);
    const texture = useMemo(() => createWarmGlowTexture(rgb), [rgb]);
+
+   useFrame((state) => {
+      if (!materialRef.current) return;
+      const pulse = 0.85 + 0.15 * Math.sin(state.clock.elapsedTime * 0.5 + seed);
+      materialRef.current.opacity = opacity * pulse;
+   });
 
    return (
       <sprite position={position} scale={[scale, scale, 1]}>
-         <spriteMaterial map={texture} transparent opacity={opacity} depthWrite={false} />
+         <spriteMaterial ref={materialRef} map={texture} transparent opacity={opacity} depthWrite={false} />
       </sprite>
    );
 }
@@ -137,9 +150,9 @@ function WarmGlow({ rgb, position, scale, opacity }: WarmGlowProps) {
 function ChristmasLightsGlow() {
    return (
       <>
-         <WarmGlow rgb="255, 196, 102" position={[9, 5, -10]} scale={18} opacity={0.4} />
-         <WarmGlow rgb="255, 165, 90" position={[-10, -6, -18]} scale={22} opacity={0.32} />
-         <WarmGlow rgb="255, 214, 140" position={[1, -8, -6]} scale={14} opacity={0.3} />
+         <WarmGlow rgb="255, 196, 102" position={[9, 5, -10]} scale={18} opacity={0.4} seed={0} />
+         <WarmGlow rgb="255, 165, 90" position={[-10, -6, -18]} scale={22} opacity={0.32} seed={2.1} />
+         <WarmGlow rgb="255, 214, 140" position={[1, -8, -6]} scale={14} opacity={0.3} seed={4.4} />
       </>
    );
 }

@@ -1,62 +1,93 @@
 "use client";
 
 import { MenusData } from "@/data/menus.data";
-import { IMenu } from "@/types/menu.interface";
-import { Button } from "@heroui/button";
 import { Image } from "@heroui/image";
 import { Link } from "@heroui/link";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from "@heroui/navbar";
-import { CandyCane, Moon } from "lucide-react";
+import { Navbar, NavbarBrand, NavbarContent } from "@heroui/navbar";
+import { Button } from "@heroui/button";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@heroui/react";
+import { CandyCane, Ghost, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ChristmasLights from "@/components/christmas-lights";
+import SpookyCobwebs from "@/components/spooky-cobwebs";
 
+const THEME_OPTIONS = {
+   dark: { label: "Espacio", icon: Moon, bg: undefined },
+   light: { label: "Navideño", icon: CandyCane, bg: "#B11226" },
+   halloween: { label: "Halloween", icon: Ghost, bg: "#ff7518" },
+} as const;
 
-function HeaderSimply() {
-   const [isMenuOpen, setIsMenuOpen] = useState(false);
-   const [path, setPath] = useState<string>("");
-   const { theme, setTheme } = useTheme()
-   const menus = MenusData;
+type ThemeKey = keyof typeof THEME_OPTIONS;
+
+function ThemeMenu() {
+   const { theme, setTheme } = useTheme();
+   const [mounted, setMounted] = useState(false);
+   useEffect(() => setMounted(true), []);
+
+   const current: ThemeKey = mounted && theme && theme in THEME_OPTIONS ? (theme as ThemeKey) : "dark";
+   const { icon: CurrentIcon, bg } = THEME_OPTIONS[current];
 
    return (
+      <Dropdown classNames={{ content: "bg-popover text-popover-foreground" }}>
+         <DropdownTrigger>
+            <Button
+               isIconOnly
+               aria-label="Cambiar tema"
+               style={bg ? { backgroundColor: bg } : undefined}
+               startContent={<CurrentIcon size={20} strokeWidth={2} color={bg ? "#fff" : undefined} />}
+            />
+         </DropdownTrigger>
+         <DropdownMenu
+            aria-label="Selector de tema"
+            disallowEmptySelection
+            selectionMode="single"
+            selectedKeys={[current]}
+            onAction={(key) => setTheme(key as string)}
+         >
+            {Object.entries(THEME_OPTIONS).map(([key, { label, icon: Icon }]) => (
+               <DropdownItem key={key} className="text-popover-foreground" startContent={<Icon size={18} strokeWidth={2} />}>
+                  {label}
+               </DropdownItem>
+            ))}
+         </DropdownMenu>
+      </Dropdown>
+   );
+}
+
+function HeaderSimply() {
+   return (
       <div className="relative">
-      <Navbar isBlurred isBordered >
-         <NavbarContent justify="start" >
-            {/* <NavbarMenuToggle
-               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-               className="sm:hidden"
-            /> */}
-            <NavbarBrand as={Link} href={"/#presentation"}>
-               <Image
-                  isBlurred
-                  className="hidden dark:flex"
-                  alt={`kefer logo`}
-                  height={40}
-                  src="/images/logo-dark.svg"
-                  loading="lazy"
+         <Navbar isBlurred isBordered >
+            <NavbarContent justify="start" >
+               <NavbarBrand as={Link} href={"/#presentation"}>
+                  <Image
+                     isBlurred
+                     className="hidden dark:flex halloween:flex"
+                     alt={`kefer logo`}
+                     height={40}
+                     src="/images/logo-dark.svg"
+                     loading="lazy"
+                  />
+                  <Image
+                     isBlurred
+                     className="hidden light-theme:flex"
+                     alt={`kefer logo`}
+                     height={40}
+                     src="/images/logo-light.svg"
+                     loading="lazy"
+                  />
+               </NavbarBrand>
+            </NavbarContent>
 
-               />
-               <Image
-                  isBlurred
-                  className="dark:hidden"
-                  alt={`kefer logo`}
-                  height={40}
-                  src="/images/logo-light.svg"
-                  loading="lazy"
-
-               />
-            </NavbarBrand>
-         </NavbarContent>
-
-
-         <NavbarContent justify="end">
-            <Button className="dark:hidden" style={{ backgroundColor: "#B11226" }} isIconOnly startContent={<CandyCane size={20} strokeWidth={2} color="#fff" />} onPress={() => theme === "light" ? setTheme('dark') : setTheme('light')}></Button>
-            <Button className="hidden dark:flex" isIconOnly startContent={<Moon size={20} strokeWidth={2} />} onPress={() => theme === "light" ? setTheme('dark') : setTheme('light')}></Button>
-         </NavbarContent>
-      </Navbar >
-      <div className="absolute -bottom-8 inset-x-0 z-0">
-         <ChristmasLights />
-      </div>
+            <NavbarContent justify="end">
+               <ThemeMenu />
+            </NavbarContent>
+         </Navbar >
+         <div className="absolute -bottom-8 inset-x-0 z-0">
+            <ChristmasLights />
+         </div>
+         <SpookyCobwebs />
       </div>
    );
 }

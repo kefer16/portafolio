@@ -8,6 +8,7 @@ import HeroUIProviders from "@/provider/hero-ui.provider";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Footer from "@/components/footer";
 import PineSilhouette from "@/components/pine-silhouette";
+import SpookySilhouette from "@/components/spooky-silhouette";
 
 export const metadata: Metadata = MetaData;
 // import { Noto_Sans } from "next/font/google"
@@ -30,9 +31,10 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                Saltar al contenido
             </a>
             <HeroUIProviders>
-               <NextThemesProvider attribute="class" defaultTheme="dark">
+               <NextThemesProvider attribute="class" defaultTheme="dark" themes={["dark", "light", "halloween"]}>
                   <ThemeCanvas />
                   <PineSilhouette />
+                  <SpookySilhouette />
                   <main id="main-content" className="relative z-20 min-h-screen flex flex-col">
                      {children}
                      <Footer />
