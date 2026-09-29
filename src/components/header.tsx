@@ -14,22 +14,22 @@ import ChristmasLights from "@/components/christmas-lights";
 import SpookyCobwebs from "@/components/spooky-cobwebs";
 
 const THEME_OPTIONS = {
-   dark: { label: "Espacio", icon: Moon, bg: undefined },
-   light: { label: "Navideño", icon: CandyCane, bg: "#B11226" },
+   space: { label: "Espacio", icon: Moon, bg: undefined },
+   christmas: { label: "Navideño", icon: CandyCane, bg: "#B11226" },
    halloween: { label: "Halloween", icon: Ghost, bg: "#ff7518" },
 } as const;
 
 type ThemeKey = keyof typeof THEME_OPTIONS;
 
 // The theme is only known once mounted on the client (next-themes reads
-// localStorage) - defaulting to "dark" until then matches the provider's
+// localStorage) - defaulting to "space" until then matches the provider's
 // own defaultTheme and avoids a server/client mismatch on first paint.
 function ThemeMenu() {
    const { theme, setTheme } = useTheme();
    const [mounted, setMounted] = useState(false);
    useEffect(() => setMounted(true), []);
 
-   const current: ThemeKey = mounted && theme && theme in THEME_OPTIONS ? (theme as ThemeKey) : "dark";
+   const current: ThemeKey = mounted && theme && theme in THEME_OPTIONS ? (theme as ThemeKey) : "space";
    const { icon: CurrentIcon, bg } = THEME_OPTIONS[current];
 
    return (
@@ -73,20 +73,14 @@ function Header() {
                   className="sm:hidden"
                />
                <NavbarBrand as={Link} href={"/#presentation"}>
+                  {/* All three themes are dark scenes now, so the light-
+                     colored logo variant applies everywhere - no per-theme
+                     swap needed anymore. */}
                   <Image
                      isBlurred
-                     className="hidden dark:flex halloween:flex"
                      alt={`kefer logo`}
                      height={40}
                      src="/images/logo-dark.svg"
-                     loading="lazy"
-                  />
-                  <Image
-                     isBlurred
-                     className="hidden light-theme:flex"
-                     alt={`kefer logo`}
-                     height={40}
-                     src="/images/logo-light.svg"
                      loading="lazy"
                   />
                </NavbarBrand>

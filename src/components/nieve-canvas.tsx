@@ -96,67 +96,10 @@ function SnowLayer({ count, size, speedRange, zRange, opacity, drift }: SnowLaye
    );
 }
 
-function createWarmGlowTexture(rgb: string) {
-   const canvas = document.createElement("canvas");
-   canvas.width = 256;
-   canvas.height = 256;
-   const ctx = canvas.getContext("2d");
-   if (ctx) {
-      const gradient = ctx.createRadialGradient(128, 128, 0, 128, 128, 128);
-      gradient.addColorStop(0, `rgba(${rgb}, 0.55)`);
-      gradient.addColorStop(0.45, `rgba(${rgb}, 0.25)`);
-      gradient.addColorStop(1, `rgba(${rgb}, 0)`);
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, 256, 256);
-   }
-   return new THREE.CanvasTexture(canvas);
-}
-
-interface WarmGlowProps {
-   rgb: string;
-   position: [number, number, number];
-   scale: number;
-   opacity: number;
-   seed: number;
-}
-
-// Soft warm patches standing in for string-light glow, the light-theme
-// counterpart to the dark theme's nebula clouds. Normal (non-additive)
-// blending here, unlike the nebula: additive light washes out against this
-// bright sky-blue background instead of glowing the way it does over near-
-// black, so a plain soft-edged blob reads better.
-//
-// A slow, gentle opacity "breathing" gives it some life - much subtler than
-// the halloween pumpkin's candle flicker (one low-frequency sine instead of
-// several fast ones), so it reads as a soft pulse rather than something
-// that pulls focus off the actual page content.
-function WarmGlow({ rgb, position, scale, opacity, seed }: WarmGlowProps) {
-   const materialRef = useRef<THREE.SpriteMaterial>(null);
-   const texture = useMemo(() => createWarmGlowTexture(rgb), [rgb]);
-
-   useFrame((state) => {
-      if (!materialRef.current) return;
-      const pulse = 0.85 + 0.15 * Math.sin(state.clock.elapsedTime * 0.5 + seed);
-      materialRef.current.opacity = opacity * pulse;
-   });
-
-   return (
-      <sprite position={position} scale={[scale, scale, 1]}>
-         <spriteMaterial ref={materialRef} map={texture} transparent opacity={opacity} depthWrite={false} />
-      </sprite>
-   );
-}
-
-function ChristmasLightsGlow() {
-   return (
-      <>
-         <WarmGlow rgb="255, 196, 102" position={[9, 5, -10]} scale={18} opacity={0.4} seed={0} />
-         <WarmGlow rgb="255, 165, 90" position={[-10, -6, -18]} scale={22} opacity={0.32} seed={2.1} />
-         <WarmGlow rgb="255, 214, 140" position={[1, -8, -6]} scale={14} opacity={0.3} seed={4.4} />
-      </>
-   );
-}
-
+// The ambient warm-glow sprites this used to render moved to ground level:
+// the village silhouette's lit cabin windows carry that "warm light against
+// dusk" job now, tied to something concrete instead of floating loose in
+// the sky.
 const NieveCanvas = () => (
    <div
       aria-hidden="true"
@@ -164,7 +107,6 @@ const NieveCanvas = () => (
    >
       <CanvasErrorBoundary>
          <Canvas camera={{ position: [0, 0, 15], fov: 75 }}>
-            <ChristmasLightsGlow />
             <SnowLayer count={700} size={0.08} speedRange={[0.006, 0.012]} zRange={[-32, -14]} opacity={0.45} drift={0.0006} />
             <SnowLayer count={1000} size={0.13} speedRange={[0.012, 0.022]} zRange={[-12, 8]} opacity={0.7} drift={0.001} />
             <SnowLayer count={450} size={0.19} speedRange={[0.02, 0.032]} zRange={[2, 13]} opacity={0.8} drift={0.0016} />

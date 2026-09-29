@@ -38,7 +38,7 @@ function ChristmasLights({ count = 16 }: ChristmasLightsProps) {
    }));
 
    return (
-      <div aria-hidden="true" className="hidden light-theme:block w-full h-[46px] pointer-events-none select-none">
+      <div aria-hidden="true" className="hidden christmas-theme:block w-full h-[46px] pointer-events-none select-none">
          <svg
             viewBox={`0 0 ${width} ${height}`}
             preserveAspectRatio="xMidYMin slice"

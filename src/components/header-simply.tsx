@@ -13,8 +13,8 @@ import ChristmasLights from "@/components/christmas-lights";
 import SpookyCobwebs from "@/components/spooky-cobwebs";
 
 const THEME_OPTIONS = {
-   dark: { label: "Espacio", icon: Moon, bg: undefined },
-   light: { label: "Navideño", icon: CandyCane, bg: "#B11226" },
+   space: { label: "Espacio", icon: Moon, bg: undefined },
+   christmas: { label: "Navideño", icon: CandyCane, bg: "#B11226" },
    halloween: { label: "Halloween", icon: Ghost, bg: "#ff7518" },
 } as const;
 
@@ -25,7 +25,7 @@ function ThemeMenu() {
    const [mounted, setMounted] = useState(false);
    useEffect(() => setMounted(true), []);
 
-   const current: ThemeKey = mounted && theme && theme in THEME_OPTIONS ? (theme as ThemeKey) : "dark";
+   const current: ThemeKey = mounted && theme && theme in THEME_OPTIONS ? (theme as ThemeKey) : "space";
    const { icon: CurrentIcon, bg } = THEME_OPTIONS[current];
 
    return (
@@ -63,18 +63,9 @@ function HeaderSimply() {
                <NavbarBrand as={Link} href={"/#presentation"}>
                   <Image
                      isBlurred
-                     className="hidden dark:flex halloween:flex"
                      alt={`kefer logo`}
                      height={40}
                      src="/images/logo-dark.svg"
-                     loading="lazy"
-                  />
-                  <Image
-                     isBlurred
-                     className="hidden light-theme:flex"
-                     alt={`kefer logo`}
-                     height={40}
-                     src="/images/logo-light.svg"
                      loading="lazy"
                   />
                </NavbarBrand>

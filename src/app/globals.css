@@ -3,33 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+   /* Space theme's palette is the default (:root) - it's also defaultTheme,
+      so this is what briefly shows before next-themes' script picks the
+      stored theme, and there's no visible flash either way. */
    :root {
-      --background: 210 58.3% 70.14%;
-      --foreground: 215 28% 17%;
-      --card: 0 0% 100%;
-      --card-foreground: 215 28% 17%;
-      --popover: 0 0% 100%;
-      --popover-foreground: 215 28% 17%;
-      --primary: 155 55% 34%;
-      --primary-foreground: 0 0% 100%;
-      --secondary: 200 60% 92%;
-      --secondary-foreground: 215 28% 17%;
-      --muted: 200 35% 90%;
-      --muted-foreground: 215 18% 22%;
-      --accent: 28 85% 55%;
-      --accent-foreground: 0 0% 100%;
-      --destructive: 355 70% 48%;
-      --destructive-foreground: 0 0% 100%;
-      --border: 200 20% 85%;
-      --input: 200 20% 85%;
-      --ring: 155 55% 34%;
-      --radius: 0.75rem;
-   }
-
-   .dark {
-
-      --gradient: linear-gradient(to top left, #0052D4, #4364F7, #6FB1FC);
-
       --background: 230 65% 3.36%;
       --foreground: 230 10% 97.1%;
 
@@ -58,6 +35,7 @@
       --destructive-foreground: 230 10% 97.1%;
 
       --ring: 230 100% 42%;
+      --radius: 0.75rem;
    }
 
    .halloween {
@@ -90,6 +68,43 @@
 
       --ring: 25 90% 55%;
    }
+
+   /* Christmas, take two: a snowy village at dusk instead of a bright noon
+      sky. Everything - the indigo-to-amber horizon gradient, the evergreen
+      primary, the red secondary, the gold accent - is picked to give the
+      village's lit windows and the string lights something dark to glow
+      against, the same reason the halloween pumpkins pop against near-black
+      instead of daylight. */
+   .christmas {
+      --background: 250 45% 16%;
+      --foreground: 250 20% 96%;
+
+      --muted: 250 30% 26%;
+      --muted-foreground: 250 15% 68%;
+
+      --popover: 250 40% 20%;
+      --popover-foreground: 250 20% 96%;
+
+      --card: 250 40% 20%;
+      --card-foreground: 250 20% 96%;
+
+      --border: 250 25% 24%;
+      --input: 250 25% 24%;
+
+      --primary: 155 55% 38%;
+      --primary-foreground: 0 0% 100%;
+
+      --secondary: 355 65% 45%;
+      --secondary-foreground: 0 0% 100%;
+
+      --accent: 45 85% 55%;
+      --accent-foreground: 250 45% 12%;
+
+      --destructive: 355 70% 40%;
+      --destructive-foreground: 0 0% 100%;
+
+      --ring: 155 55% 38%;
+   }
 }
 
 
@@ -102,13 +117,13 @@
       @apply bg-background text-foreground;
    }
 
-   /* Light theme: a flat sky-blue felt static, so it's a gradient instead -
-      deeper blue up top fading into a warm, low winter-sun glow near the
-      bottom. Dark and halloween keep a solid color (their canvases already
-      provide the depth). background-attachment keeps it pinned to the
-      viewport instead of scrolling with the page. */
-   html.light body {
-      background: linear-gradient(to bottom, hsl(212, 62%, 58%) 0%, hsl(206, 55%, 72%) 45%, hsl(36, 70%, 87%) 100%);
+   /* Christmas's dusk sky: deep indigo up top, fading through violet into a
+      warm amber afterglow right at the horizon, where the village
+      silhouette sits. background-attachment keeps it pinned to the
+      viewport instead of scrolling with the page. Space and halloween keep
+      a solid color - their canvases already provide the depth. */
+   html.christmas body {
+      background: linear-gradient(to bottom, hsl(245, 55%, 12%) 0%, hsl(262, 45%, 20%) 55%, hsl(22, 65%, 32%) 100%);
       background-attachment: fixed;
    }
 
@@ -116,13 +131,12 @@
       @apply scroll-smooth;
    }
 
-   /* The dark and halloween themes' canvas backgrounds sit directly behind
-      all page content; a stray bright star/bat or a glow tint can land
+   /* Every theme's canvas background sits directly behind all page
+      content; a stray bright star/bat/snowflake or a glow tint can land
       right on top of a letter and blend in. A soft shadow keeps text
       readable regardless of what's rendering behind it, without dimming
       the effect itself. */
-   .dark main,
-   .halloween main {
+   main {
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65), 0 1px 12px rgba(0, 0, 0, 0.35);
    }
 }

@@ -81,12 +81,13 @@ const config = {
     require("tailwindcss-animate"),
     heroui(),
     // next-themes adds the theme name as a class on <html> (confirmed:
-    // class="light" / class="dark" / class="halloween"), same mechanism
-    // Tailwind's own `dark:` variant relies on - these two extend that to
-    // the other two themes so decorative pieces can use light-theme:/
-    // halloween: the same way the rest of the app already uses dark:.
+    // class="space" / class="christmas" / class="halloween"). "dark" is a
+    // separate, permanent class (see layout.tsx) so Tailwind's own `dark:`
+    // variant - and HeroUI's - stays on for all three themes; these three
+    // variants are for picking between the themes themselves.
     plugin(function ({ addVariant }: { addVariant: (name: string, selector: string) => void }) {
-      addVariant("light-theme", "html.light &");
+      addVariant("space-theme", "html.space &");
+      addVariant("christmas-theme", "html.christmas &");
       addVariant("halloween", "html.halloween &");
     }),
   ],

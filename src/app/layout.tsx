@@ -7,7 +7,7 @@ import { ReactNode } from "react";
 import HeroUIProviders from "@/provider/hero-ui.provider";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Footer from "@/components/footer";
-import PineSilhouette from "@/components/pine-silhouette";
+import VillageSilhouette from "@/components/village-silhouette";
 import SpookySilhouette from "@/components/spooky-silhouette";
 
 export const metadata: Metadata = MetaData;
@@ -21,7 +21,7 @@ export const metadata: Metadata = MetaData;
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
    return (
-      <html id="html-background" className="scroll-smooth" lang="es" suppressHydrationWarning>
+      <html id="html-background" className="scroll-smooth dark" lang="es" suppressHydrationWarning>
          <link rel="icon" href="/favicon.ico" sizes="any" />
          <body>
             <a
@@ -31,9 +31,19 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                Saltar al contenido
             </a>
             <HeroUIProviders>
-               <NextThemesProvider attribute="class" defaultTheme="dark" themes={["dark", "light", "halloween"]}>
+               {/*
+                  All three themes (space, christmas, halloween) are dark
+                  scenes now, so "dark" is a permanent class above, outside
+                  next-themes' control - it manages "space"/"christmas"/
+                  "halloween" as a separate class, which is what the
+                  space-theme:/christmas-theme:/halloween: variants key off.
+                  This keeps every HeroUI component (Chip, Card, Dropdown...)
+                  in its dark styling everywhere, instead of re-overriding
+                  each one by hand for three dark themes.
+               */}
+               <NextThemesProvider attribute="class" defaultTheme="space" themes={["space", "christmas", "halloween"]}>
                   <ThemeCanvas />
-                  <PineSilhouette />
+                  <VillageSilhouette />
                   <SpookySilhouette />
                   <main id="main-content" className="relative z-20 min-h-screen flex flex-col">
                      {children}

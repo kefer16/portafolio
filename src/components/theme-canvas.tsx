@@ -25,7 +25,7 @@ function ThemeCanvas() {
 
    if (!mounted) return null;
 
-   if (resolvedTheme === "light") return <NieveCanvas />;
+   if (resolvedTheme === "christmas") return <NieveCanvas />;
    if (resolvedTheme === "halloween") return <HalloweenCanvas />;
    return <StarsCanvas />;
 }
