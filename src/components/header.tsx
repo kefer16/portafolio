@@ -9,6 +9,7 @@ import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuI
 import { CandyCane, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useState } from "react";
+import ChristmasLights from "@/components/christmas-lights";
 
 
 function Header() {
@@ -18,6 +19,7 @@ function Header() {
    const menus = MenusData;
 
    return (
+      <div className="relative">
       <Navbar isBlurred isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
          <NavbarContent justify="start" >
             <NavbarMenuToggle
@@ -64,8 +66,8 @@ function Header() {
          </NavbarContent  >
 
          <NavbarContent justify="end">
-            <Button className="hidden dark:flex" style={{ backgroundColor: "#B11226" }} isIconOnly startContent={<CandyCane size={20} strokeWidth={2} />} onPress={() => theme === "light" ? setTheme('dark') : setTheme('light')}></Button>
-            <Button className="dark:hidden" isIconOnly startContent={<Moon size={20} strokeWidth={2} />} onPress={() => theme === "light" ? setTheme('dark') : setTheme('light')}></Button>
+            <Button className="dark:hidden" style={{ backgroundColor: "#B11226" }} isIconOnly startContent={<CandyCane size={20} strokeWidth={2} color="#fff" />} onPress={() => theme === "light" ? setTheme('dark') : setTheme('light')}></Button>
+            <Button className="hidden dark:flex" isIconOnly startContent={<Moon size={20} strokeWidth={2} />} onPress={() => theme === "light" ? setTheme('dark') : setTheme('light')}></Button>
          </NavbarContent>
 
          <NavbarMenu>
@@ -87,6 +89,10 @@ function Header() {
             ))}
          </NavbarMenu>
       </Navbar >
+      <div className="absolute -bottom-8 inset-x-0 z-0">
+         <ChristmasLights />
+      </div>
+      </div>
    );
 }
 

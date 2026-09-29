@@ -8,7 +8,7 @@ function Footer() {
    const year = new Date().getFullYear();
 
    return (
-      <footer className="flex w-full justify-center border-t border-divider mt-auto">
+      <footer className="flex w-full justify-center border-t border-divider mt-auto bg-background/70 backdrop-blur-sm dark:bg-transparent dark:backdrop-blur-none">
          <div className="flex w-full max-w-[1440px] px-5 py-6 flex-col gap-4 items-center sm:flex-row sm:justify-between">
             <p className="text-sm text-default-500">© {year} {last_name}</p>
             <div className="flex gap-4">
