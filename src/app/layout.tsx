@@ -9,6 +9,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 import Footer from "@/components/footer";
 import VillageSilhouette from "@/components/village-silhouette";
 import SpookySilhouette from "@/components/spooky-silhouette";
+import MoonscapeSilhouette from "@/components/moonscape-silhouette";
 
 export const metadata: Metadata = MetaData;
 // import { Noto_Sans } from "next/font/google"
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
                */}
                <NextThemesProvider attribute="class" defaultTheme="space" themes={["space", "christmas", "halloween"]}>
                   <ThemeCanvas />
+                  <MoonscapeSilhouette />
                   <VillageSilhouette />
                   <SpookySilhouette />
                   <main id="main-content" className="relative z-20 min-h-screen flex flex-col">

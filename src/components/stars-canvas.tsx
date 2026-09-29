@@ -153,39 +153,62 @@ function createGlowTexture(rgb: string) {
    return new THREE.CanvasTexture(canvas);
 }
 
-interface NebulaCloudProps {
-   rgb: string;
+// A shaded sphere clipped to a circle (not a soft fuzzy blob like the glow
+// texture above) - a radial gradient offset toward one corner fakes a lit
+// side/shadow side, and a few low-alpha bands give it a gas-giant read.
+function createPlanetTexture(highlight: string, base: string, shadow: string) {
+   const canvas = document.createElement("canvas");
+   canvas.width = 256;
+   canvas.height = 256;
+   const ctx = canvas.getContext("2d");
+   if (ctx) {
+      ctx.save();
+      ctx.beginPath();
+      ctx.arc(128, 128, 118, 0, Math.PI * 2);
+      ctx.clip();
+
+      const gradient = ctx.createRadialGradient(92, 88, 8, 128, 128, 150);
+      gradient.addColorStop(0, highlight);
+      gradient.addColorStop(0.5, base);
+      gradient.addColorStop(1, shadow);
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, 256, 256);
+
+      ctx.globalAlpha = 0.14;
+      ctx.fillStyle = shadow;
+      [40, 95, 150, 195].forEach((y, i) => {
+         ctx.fillRect(0, y, 256, 10 + (i % 2) * 6);
+      });
+
+      ctx.restore();
+   }
+   return new THREE.CanvasTexture(canvas);
+}
+
+interface FocalPlanetProps {
    position: [number, number, number];
    scale: number;
-   opacity: number;
 }
 
-// A soft, additive-blended glow sprite standing in for a nebula cloud. No
-// external art assets needed - the "cloud" is just a radial gradient drawn
-// to a canvas at runtime and used as the sprite's texture.
-function NebulaCloud({ rgb, position, scale, opacity }: NebulaCloudProps) {
-   const texture = useMemo(() => createGlowTexture(rgb), [rgb]);
+// The space theme's single strong anchor, replacing what used to be three
+// scattered nebula clouds - one glowing planet the eye can land on, the
+// same role the village's lit windows and the pumpkin glow play for the
+// other two themes. Static (no rotation or pulse): it reads as a fixed
+// point in the sky rather than something competing with the twinkling
+// stars for attention.
+function FocalPlanet({ position, scale }: FocalPlanetProps) {
+   const haloTexture = useMemo(() => createGlowTexture("129, 140, 248"), []);
+   const bodyTexture = useMemo(() => createPlanetTexture("#e8ebff", "#6d7cc7", "#20254a"), []);
 
    return (
-      <sprite position={position} scale={[scale, scale, 1]}>
-         <spriteMaterial
-            map={texture}
-            transparent
-            opacity={opacity}
-            depthWrite={false}
-            blending={THREE.AdditiveBlending}
-         />
-      </sprite>
-   );
-}
-
-function Nebula() {
-   return (
-      <>
-         <NebulaCloud rgb="124, 58, 237" position={[1.1, 0.5, -1.6]} scale={3.4} opacity={0.28} />
-         <NebulaCloud rgb="37, 99, 235" position={[-1.3, -0.3, -1.9]} scale={3.8} opacity={0.24} />
-         <NebulaCloud rgb="219, 39, 119" position={[0.2, -1.0, -1.4]} scale={2.9} opacity={0.22} />
-      </>
+      <group position={position}>
+         <sprite scale={[scale * 2.6, scale * 2.6, 1]}>
+            <spriteMaterial map={haloTexture} transparent opacity={0.35} depthWrite={false} blending={THREE.AdditiveBlending} />
+         </sprite>
+         <sprite scale={[scale, scale, 1]}>
+            <spriteMaterial map={bodyTexture} transparent depthWrite={false} />
+         </sprite>
+      </group>
    );
 }
 
@@ -280,7 +303,7 @@ function ShootingStar({ minDelay, maxDelay }: ShootingStarProps) {
 
 const StarBackground = () => (
    <>
-      <Nebula />
+      <FocalPlanet position={[1.35, 0.9, -2.6]} scale={0.65} />
       <StarLayer count={600} radius={1.7} size={0.0025} opacity={0.45} speed={[0.03, 0.02]} />
       <StarLayer count={900} radius={1.2} size={0.0035} opacity={0.65} speed={[0.1, 0.067]} />
       <StarLayer count={400} radius={0.8} size={0.0045} opacity={0.75} speed={[0.17, 0.11]} />
