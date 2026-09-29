@@ -74,4 +74,13 @@
    html {
       @apply scroll-smooth;
    }
+
+   /* The dark theme's starfield/nebula background sits directly behind all
+      page content; a stray bright star or a nebula tint can land right on
+      top of a letter and blend in. A soft shadow keeps text readable
+      regardless of what's rendering behind it, without dimming the effect
+      itself. */
+   .dark main {
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.65), 0 1px 12px rgba(0, 0, 0, 0.35);
+   }
 }
