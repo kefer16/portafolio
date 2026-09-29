@@ -57,7 +57,9 @@ function ThemeMenu() {
 
 function HeaderSimply() {
    return (
-      <div className="relative">
+      // sticky on this wrapper too, not just the Navbar - see header.tsx for
+      // why a plain "relative" div here defeats HeroUI's own sticky Navbar.
+      <div className="sticky top-0 z-40 relative">
          <Navbar isBlurred isBordered >
             <NavbarContent justify="start" >
                <NavbarBrand as={Link} href={"/#presentation"}>

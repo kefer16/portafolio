@@ -65,7 +65,13 @@ function Header() {
    const menus = MenusData;
 
    return (
-      <div className="relative">
+      // sticky (not just relative) on this wrapper, not only on the Navbar
+      // itself: HeroUI's Navbar is sticky by default, but its own stickiness
+      // range is capped by its immediate parent's box - a plain "relative"
+      // div here is exactly as tall as the navbar, leaving it nowhere to
+      // stick, so the whole thing scrolled away. Making this wrapper sticky
+      // too gives it main's full height to stick within instead.
+      <div className="sticky top-0 z-40 relative">
          <Navbar isBlurred isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
             <NavbarContent justify="start" >
                <NavbarMenuToggle
